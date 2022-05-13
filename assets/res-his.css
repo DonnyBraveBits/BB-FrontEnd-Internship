@@ -1,0 +1,115 @@
+
+@media (max-width: 767px) {
+
+    .birthday {
+        padding-top: 40px;
+    }
+
+    .birthday-vid { 
+        min-height: 175px;
+    }
+   
+    .discover-play img {
+        cursor: pointer;
+        transform: scale(0.5);
+    }
+
+    .birthday-heading {
+        margin-top: 30px;
+    }
+
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+}
+
+/* tab-mobile */
+
+@media (max-width: 1023px) {
+
+    .oder-tab-mb-2 {
+        order: 2;
+    }
+
+    .oder-tab-mb-1 {
+        order: 1;
+    }
+
+    .feature {
+        padding-top: 40px;
+    }
+
+    .mt-30 {
+        margin-top: 30px;
+    }
+
+    .mt-70 {
+        margin-top: 70px;
+    }
+
+    .reasons-text {
+        padding: 70px 0;
+    }
+
+    .dfe {
+        justify-content: center;
+    }
+
+    .featured-descript {
+        max-width: 100%;
+    }
+
+    .featured-img {
+        margin: 0 auto;
+    }
+}
+/* pc resolution */
+
+@media (min-width: 1024px) {
+    .pt-100 {
+        padding-top: 100px;
+    }
+}
+
+@media (min-width: 1024px) and (max-width: 1362px) {
+    
+
+    .feature {
+        padding-top: 40px;
+    }
+
+    .mt-30 {
+        margin-top: 30px;
+    }
+
+    .mt-70 {
+        margin-top: 70px;
+    }
+
+    .reasons-text {
+        padding: 70px 0;
+    }
+
+    .dfe {
+        justify-content: center;
+    }
+
+    .featured-img {
+        margin: 0 auto;
+    }
+
+    .f1 {
+        flex: 1;
+    }
+
+    .featured-descript {
+        max-width: 471px;
+    }
+
+    .ml-40 {
+        margin-left: 40px;
+    }
+}

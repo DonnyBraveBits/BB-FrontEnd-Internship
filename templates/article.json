@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "3c60376f-cb95-486e-b6e9-aafd5b47eb3c": {
+          "type": "image_picker",
+          "settings": {
+          }
+        },
+        "4544eb66-1f6e-435a-bf57-b3f47d8f507d": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "e87e44a2-11c2-446d-9d87-251566fa5fdb": {
+          "type": "content",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "3c60376f-cb95-486e-b6e9-aafd5b47eb3c",
+        "4544eb66-1f6e-435a-bf57-b3f47d8f507d",
+        "e87e44a2-11c2-446d-9d87-251566fa5fdb"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

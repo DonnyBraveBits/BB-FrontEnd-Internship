@@ -1,0 +1,47 @@
+
+@media (max-width: 767px) {
+    
+    .form-title {
+        margin: 40px 0 30px;
+    }
+
+    .heading {
+        margin-bottom: 20px;
+    }
+
+    .hours-open {
+        margin: 40px 0;
+    }
+    
+    
+
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+}
+
+/* tab-mobile */
+
+@media (max-width: 1023px) {
+    .contact {
+        padding: 0 10px;
+    }
+    
+}
+
+/* pc */
+
+@media (min-width: 1024px) {
+    
+}
+
+/* pc resolution */
+
+@media (min-width: 1024px) and (max-width: 1362px) {
+    
+
+    
+}

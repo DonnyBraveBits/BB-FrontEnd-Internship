@@ -1,0 +1,132 @@
+
+<div class="dealer-container">
+  <div class="form-container grid wide2 container__large">
+    <div class="form-title title-product">
+      <h2 class="heading">
+        {{ section.settings.heading }}
+      </h2>
+      <p class="form-text title-product--text colors-text-secondary ">
+        {{ section.settings.subheading }}
+      </p>
+    </div>
+
+    {%- if form.posted_successfully? -%}
+      <div>Gui thanh cong</div> 
+    {% endif %} 
+
+    {%- form 'contact' -%}
+      <div class="row">
+        <div class="col l-6 c-12 m-6 mb-40">
+            <label class="form-label" for="title">TITLE</label>
+            <div class="select">
+              <select id="title" class="form-select colors-text-secondary" name="contact[title]">
+                <option selected value="Miss">Miss</option>
+                <option value="Mr">Mr</option>
+                <option value="Ms">Ms</option>
+                <option value="Mrs">Mrs</option>
+              </select>
+            </div>
+        </div>
+        <div class="col l-6 c-12 m-6 mb-40">
+          <label class="form-label" for="fname">FIRST NAME*</label>
+          <input class="form-input colors-text-secondary" required type="text" name="contact[fname]" id="fname" placeholder='Insert your name' >
+        </div>
+        <div class="col l-6 c-12 m-6 mb-40">
+          <label class="form-label" for="sname">SUR NAME*</label>
+          <input class="form-input colors-text-secondary" required type="text" name="contact[lname]" id="sname" placeholder='Insert your name' >
+        </div>
+        <div class="col l-6 c-12 m-6 mb-40">
+          <label class="form-label" for="email">EMAIL*</label>
+          <input class="form-input colors-text-secondary" required type="email" name="contact[email]" id="email" placeholder='Insert your Email'>
+        </div>
+        <div class="col l-6 c-12 m-6 mb-40">
+          <label class="form-label" for="phone">PHONE</label>
+          <input class="form-input colors-text-secondary" type="text" name="contact[phone]" id="phone" placeholder='Insert your phone'>
+        </div>
+        <div class="col l-6 c-12 m-6 mb-40">
+          <label class="form-label" for="city">CITY</label>
+          <input class="form-input colors-text-secondary" type="text" name="contact[city]" id="city" placeholder='Insert your  city'>
+        </div>
+        <div class="col l-6 c-12 m-6 mb-40">
+          <label class="form-label" for="company">COMPANY</label>
+          <input class="form-input colors-text-secondary" type="text" name="contact[company]" id="company" placeholder='Insert your company here'>
+        </div>
+        <div class="col l-6 c-12 m-6 mb-40">
+          <label class="form-label" >PROVINCE</label>
+          <div class="select">
+            <select class="form-select" name="contact[province]" >
+              <option selected value="Agriento">Agriento</option>
+              <option value="Ontario">Ontario </option>
+              <option value="Alberta">Alberta</option>
+              <option value="Labrador">Labrador</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="col l-6 c-12 m-6 mb-40">
+          <label class="form-label" for="company">VAT NUMBER</label>
+          <input class="form-input colors-text-secondary" type="text" name="contact[VAT NUMBER]" id="company" placeholder='Insert your VAT number'>
+        </div>
+      
+        <div class="col l-6 c-12 m-6 mb-40">
+            <label class="form-label" >REQUEST</label>
+            <div class="select">
+              <select class="form-select" name="contact[request]">
+                <option selected value="Dealer">Dealer</option>
+                <option value="Suporter">Suporter </option>
+              </select>
+            </div>
+        </div>
+
+        <div class="col l-12 c-12 mb-50">
+          <label class="form-label" for="company">MESSAGE</label>
+          <input class="form-input colors-text-secondary form-mess" type="text" name="contact[MESSAGE]" id="company" placeholder='Write your message here'>
+        </div>
+
+        <div class="form-choose col l-12 c-12 mb-20">
+          <input required type="checkbox" name="" id="checked1" >
+          <label for="checked1">I agree to receive communications regarding exclusive offers, services and news</label>
+        </div>
+        <div class="form-choose col l-12 c-12 mb-50">
+            <input required type="checkbox" name="" id="checked2">
+            <label for="checked2">After reading the privacy policy , I consent to the processing of my personal data.</label>
+        </div>
+        <div class="form-choose col l-12 c-12">
+          <!-- <input class="btn btn-submit col" type="submit" value="SEND INQUIRY"> -->
+          <button class="btn btn-submit col" type="submit">
+            SEND INQUIRY
+          </button>
+        </div>
+
+      </div>
+      
+    {%- endform -%}
+  </div>
+
+</div>
+
+{% schema %}
+{
+  "name": "Dealer",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "BECOME OFFICIAL DE CARLO DEALER"
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Exclusive jewels with a contemporary design, handcrafted finished and able to arouse emotions"
+
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dealer"
+    }
+  ]
+}
+{% endschema %}

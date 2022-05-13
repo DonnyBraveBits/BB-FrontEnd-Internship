@@ -1,0 +1,120 @@
+{
+  "sections": {
+    "1652060093fb5e5388": {
+      "type": "sub-header",
+      "settings": {
+        "heading": "CARE OF PRODUCT"
+      }
+    },
+    "1652060097f78da5ee": {
+      "type": "care-product",
+      "blocks": {
+        "165206009760961607-0": {
+          "type": "text",
+          "settings": {
+            "options_icon": "icon1",
+            "title": "NOT TO WET IT",
+            "descript": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte"
+          }
+        },
+        "165206009760961607-1": {
+          "type": "text",
+          "settings": {
+            "options_icon": "icon1",
+            "title": "NOT TO WET IT",
+            "descript": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte"
+          }
+        },
+        "165206009760961607-2": {
+          "type": "text",
+          "settings": {
+            "options_icon": "icon1",
+            "title": "NOT TO WET IT",
+            "descript": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte"
+          }
+        }
+      },
+      "block_order": [
+        "165206009760961607-0",
+        "165206009760961607-1",
+        "165206009760961607-2"
+      ],
+      "settings": {
+        "heading": "THINGS YOU DON’T DO WITH OUR PRODUCT",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+      }
+    },
+    "165206014988dea2e6": {
+      "type": "image-banner",
+      "blocks": {
+        "16520601497d2ae97d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "NEW COLLECTION 2021",
+            "optionSize": "large"
+          }
+        },
+        "16520601497d2ae97d-1": {
+          "type": "Description",
+          "settings": {
+            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu"
+          }
+        }
+      },
+      "block_order": [
+        "16520601497d2ae97d-0",
+        "16520601497d2ae97d-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/slide-img-3.jpg",
+        "options": "center"
+      }
+    },
+    "16520605579b354407": {
+      "type": "image-with-text",
+      "blocks": {
+        "1652060557d0815307-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "CLEANING TOOL"
+          }
+        },
+        "1652060557d0815307-3": {
+          "type": "description",
+          "settings": {
+            "richtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte<\/p>"
+          }
+        },
+        "1652060557d0815307-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img-1_8c4f388c-27cd-4865-a3af-5987aa1df50b.jpg"
+          }
+        },
+        "f3399ec1-8ac8-4b7a-84e6-950e9843d4a8": {
+          "type": "button",
+          "settings": {
+            "button": "BUY NOW",
+            "link": "shopify:\/\/collections\/all"
+          }
+        }
+      },
+      "block_order": [
+        "1652060557d0815307-1",
+        "1652060557d0815307-3",
+        "1652060557d0815307-4",
+        "f3399ec1-8ac8-4b7a-84e6-950e9843d4a8"
+      ],
+      "settings": {
+        "layout": "left",
+        "width": "large"
+      }
+    }
+  },
+  "order": [
+    "1652060093fb5e5388",
+    "1652060097f78da5ee",
+    "165206014988dea2e6",
+    "16520605579b354407"
+  ]
+}

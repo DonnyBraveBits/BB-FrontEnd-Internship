@@ -1,0 +1,109 @@
+<div class="category featured">
+  <div class="category-wrap grid wide1 container__large ">
+    <div class="category__info">
+      <h2 class="category__info-name">
+        {{ collection.title }}
+      </h2>
+    </div>
+    <div class="collection__options df">
+      <div class="collection__options-item">
+        <span>There are {{ collection.all_products_count }} products</span>
+      </div>
+      <div class="collection__options-item df">
+        <div class="collection__sort df df__center">
+          <span>SORT BY :</span>
+          <select id="sort-by" class="collection__select">
+            {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
+              {% for option in collection.sort_options %}
+                <option value="{{ option.value }}" {% if option.value == sort_by %}selected="selected"{% endif %}>
+                  {{ option.name }}
+                </option>
+              {% endfor %}
+          </select>
+        </div>
+          <p>FILTER</p>
+      </div>
+    </div>
+
+    <div class="row featured-row main__collection">
+      {%- if collection.products == blank -%}
+        {%- for i in (1..4) -%}
+        <div class="col l-3 m-3">
+        <div class="feature-product category-product ">
+            <i class="bi bi-suit-heart feature-icon "></i>
+            <i class="bi bi-suit-heart-fill feature-icon--active "></i>
+            <div class="category-product__img feature-img feature-img--placeholder">
+              {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
+            </div>
+            <div class="product-name">
+              <a href="./product_detail.html" class="">
+                PRODUCT NAME
+              </a>
+            </div>
+            <div class="product-cost">
+                <a href="./product_detail.html" class="">
+                $99.99
+                </a>
+            </div>
+            <form method="post" action="/cart/add">
+              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+              <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+              <button type="submit" name="add" class="btn btn-feature">
+                <span class="">
+                  ADD TO CART
+                </span>
+              </button>
+            </form>
+        </div>
+      </div>
+        {%- endfor -%}
+
+      {%- elsif collection.products != blank -%}         
+        {%- for product in collection.products -%}
+          <div class="col l-3 m-6 c-6">
+            <div class="feature-product category-product mb100">
+                <i class="bi bi-suit-heart feature-icon "></i>
+                <i class="bi bi-suit-heart-fill feature-icon--active "></i>
+                <div class="category-product__img feature-img">
+                  <img src="{{ product.featured_image | image_url: width: 300 }}">
+                </div>
+                <div class="product-name">
+                  <a href="{{ product.url }}" class="">
+                    {{ product.title }}
+                  </a>
+                </div>
+                <div class="product-cost"> 
+                  <a href="{{ product.url }}" class="">
+                    {{ product.price | money }}
+                  </a>
+                </div>
+                <form method="post" action="/cart/add">
+                  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                  <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+                  <button type="submit" name="add" class="btn btn-feature">
+                    <span class="">
+                      ADD TO CART
+                    </span>
+                  </button>
+                </form>
+            </div>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+    </div>
+  </div>
+</div>
+
+  {% schema %}
+  {
+    "name" : "Main Collection",
+    "settings": [
+      
+    ],
+    "presets":[
+      {
+        "name" : "Main collecion"    
+      }
+    ]
+  }
+  {% endschema %}

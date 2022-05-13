@@ -1,0 +1,194 @@
+
+
+<div class="container__large grid wide1">
+  <ul class="fqa-menu__list menu-directional">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'Product' %}
+          <li class="fqa-menu__item active menu-directional__item">
+              <a href="#abc" class="fqa-menu__link fqa-menu__link--active menu-directional__item-link">
+                {{ block.settings.title }}
+              </a>
+          </li>
+      {% when 'Service' %}
+          <li class="fqa-menu__item menu-directional__item">
+              <a href="#abc" class="fqa-menu__link menu-directional__item-link">
+                {{ block.settings.title }}
+              </a>
+          </li>
+      {% when 'Payment' %}
+          <li class="fqa-menu__item menu-directional__item">
+              <a href="#abc" class="fqa-menu__link menu-directional__item-link">
+                {{ block.settings.title }}
+              </a>
+          </li>
+      {% endcase %}
+    {% endfor %}
+  </ul>
+  
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'Product' %}
+        <div class="detail-product__info active">
+            <div class="row">
+                <div class="col c-6 m-6 c-12">
+                      <div class="detail-product__info-wrap">
+                          <h3 class="detail-product__title">PRODUCT INFO</h3>
+                          <ul>
+                              <li class="detail-product__list">
+                                  Sed ut perspiciatis unde omnis iste natus error sit
+                              </li>
+                              <li class="detail-product__list">
+                                  Sed ut perspiciatis unde omnis iste natus error sit
+                              </li>
+                              <li class="detail-product__list">
+                                  Sed ut perspiciatis unde omnis iste natus error sit
+                              </li>
+                              <li class="detail-product__list">
+                                  Sed ut perspiciatis unde omnis iste natus error sit
+                              </li>
+                          </ul>
+
+                      </div>
+                </div>
+
+                <div class="col c-6 m-6 c-12">
+                  {% if block.settings.img != blank %}
+                  <img class="service-img" src="{{ block.settings.img | img_url: "master" }}" alt="">
+                  {% else %}
+                  {{ 'collection-1' | placeholder_svg_tag: 'service-img bg-gray ' }}
+                  {% endif %}
+                </div>
+            </div>
+        </div>
+
+      {% when 'Service' %}
+          <div class="detail-product__info ">
+            <div class="row">             
+                <div class="col c-6 m-6 c-12">
+                      <div class="detail-product__info-wrap">
+                      {% for policy in shop.policies %}
+                        {% if forloop.index == 1 %}
+                        <h3 class="detail-product__title"> {{ shop.terms_of_service.title }} </h3>
+                        <ul class="detail-product__list detail-product__list--term">
+                            {{ shop.terms_of_service }}
+                        </ul>
+                        {% endif %}
+                      {% endfor %} 
+                      </div>
+                </div>
+                <div class="col c-6 m-6 c-12">
+                  {% if block.settings.img != blank %}
+                    <img class="service-img" src="{{ block.settings.img | img_url: "master" }}" alt="">
+                  {% else %}
+                    {{ 'collection-1' | placeholder_svg_tag: 'service-img bg-gray ' }}
+                  {% endif %}
+                </div>
+            </div>
+        </div>
+
+      {% when 'Payment' %}
+          <div class="detail-product__info ">
+            <div class="row">
+                <div class="col c-6 m-6 c-12">
+                  <div class="detail-product__info-wrap">
+                    {% for policy in shop.policies %}
+                      {% if forloop.index == 2 %}
+                      <h3 class="detail-product__title"> {{ shop.refund_policy.title }} </h3>
+                      <ul class="detail-product__list detail-product__list--term">
+                          {{ shop.refund_policy }}
+                      </ul>
+                      {% endif %}
+                    {% endfor %} 
+                    </div>
+                </div>
+
+                <div class="col c-6 m-6 c-12">
+                  {% if block.settings.img != blank %}
+                    <img class="service-img" src="{{ block.settings.img | img_url: "master" }}" alt="">
+                  {% else %}
+                    {{ 'collection-1' | placeholder_svg_tag: 'service-img bg-gray ' }}
+                  {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endcase %}
+  {% endfor %}
+</div>
+
+  <script src="{{ 'info-product.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Info Product",
+  "blocks":[
+    {
+      "type": "Product",
+      "name": "Info Product",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title",
+          "default": "PRODUCT INFORMATION"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "img"
+        }
+      ]
+    },
+    {
+      "type": "Service",
+      "name": "Service",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title",
+          "default": "OUR SERVICE"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "img"
+        }
+      ]
+    },
+    {
+      "type": "Payment",
+      "name": "Payment",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title",
+          "default": "PAYMENT METHOD"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "img"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Info Product",
+      "blocks": [
+        {
+          "type": "Product"
+        },
+        {
+          "type": "Service"
+        },
+        {
+          "type": "Payment"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,42 @@
+.contact-box {
+    padding: 56px 0 50px;
+    border: 1px solid #ECECEC;
+}
+
+.contact-title {
+    margin-bottom: 5px;
+    --font-size-regular: 1.6rem;
+
+}
+
+.contact-box > svg,
+.contact-box > img {
+    margin-bottom: 37px;
+    width: 40px;
+    height: 40px;
+}
+
+.hours-open {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 100px;
+}
+
+.hours-open__heading {
+    margin-top: 16px;
+    --font-size-regular: 1.6rem;
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    font-weight: 600;
+    letter-spacing: var(--letter-spacing);
+    
+}
+
+.hours-open span{
+    margin-bottom: 5px;
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    font-weight: 600;
+    color: rgb(var(--colors-text-secondary));
+    display: block;
+}

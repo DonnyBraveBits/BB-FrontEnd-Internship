@@ -1,0 +1,159 @@
+{
+  "current": {
+    "colors_text": "#fff",
+    "colors_text_primary": "#171719",
+    "colors_text_secondary": "#84848E",
+    "background_primary": "#171719",
+    "background_secondary": "#F5F5F5",
+    "background_third": "#fff",
+    "background_btn": "#EE4D2D",
+    "background_btn_secondary": "#fff",
+    "type_page_font": "lato_n4",
+    "social_twitter_link": "",
+    "social_facebook_link": "https:\/\/facebook.com\/shopify",
+    "social_linkedin_link": "https:\/\/linkedin.com\/",
+    "social_pinterest_link": "",
+    "social_instagram_link": "http:\/\/instagram.com\/shopify",
+    "social_tiktok_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
+    "favicon": "shopify:\/\/shop_images\/a_3.png",
+    "sections": {
+      "announcement-bar": {
+        "type": "announcement-bar",
+        "blocks": {
+          "announcement-bar-0": {
+            "type": "announcement",
+            "settings": {
+              "text": "FREE SHIPPING IN ITALY"
+            }
+          }
+        },
+        "block_order": [
+          "announcement-bar-0"
+        ],
+        "settings": {
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "nameshop": "",
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "blocks": {
+          "9db6d01d-0bc4-44a3-87f3-7847c7eebc6b": {
+            "type": "logo",
+            "settings": {
+              "nameshop": "Name Shop",
+              "logo": "shopify:\/\/shop_images\/logo-white2.png",
+              "menu": "main-menu"
+            }
+          },
+          "e17e78fd-b9b9-4c4b-a344-fac5bc6a883f": {
+            "type": "Column",
+            "settings": {
+              "Column_heading": "CUSTOMER CARE:",
+              "menu": "footer"
+            }
+          },
+          "fb192a08-bd2d-4470-b042-113fb8fe4cc9": {
+            "type": "detail",
+            "settings": {
+              "heading": "LEGAL INFORMATION:",
+              "name_company": "Company name: De Carlo Nicholas:",
+              "vat": "VAT number: 07020260480",
+              "rea": "REA: FI-674952",
+              "Registered": "Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy"
+            }
+          },
+          "be3e7634-b4cb-42df-bcfd-dc54a9609341": {
+            "type": "Column",
+            "settings": {
+              "Column_heading": "LEGAL TERMS:",
+              "menu": "footer-second"
+            }
+          },
+          "b087e9ec-058b-4b05-a437-b96162476ca4": {
+            "type": "contact",
+            "settings": {
+              "heading": "SUBSCRIBE FOR NEWSLETTER"
+            }
+          },
+          "405b8d8a-3052-4967-a70a-b6a29792c995": {
+            "type": "creat",
+            "settings": {
+              "description": "De Carlo Nicholas- VAT number: 07020260480- REA: FI-674952 - Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy",
+              "Producted": "© 2022 created Thành Đạt"
+            }
+          }
+        },
+        "block_order": [
+          "9db6d01d-0bc4-44a3-87f3-7847c7eebc6b",
+          "e17e78fd-b9b9-4c4b-a344-fac5bc6a883f",
+          "fb192a08-bd2d-4470-b042-113fb8fe4cc9",
+          "be3e7634-b4cb-42df-bcfd-dc54a9609341",
+          "b087e9ec-058b-4b05-a437-b96162476ca4",
+          "405b8d8a-3052-4967-a70a-b6a29792c995"
+        ],
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
+  },
+  "presets": {
+    "Default": {
+      "colors_text": "#fff",
+      "colors_text_primary": "#171719",
+      "colors_text_secondary": "#84848E",
+      "background_primary": "#171719",
+      "background_secondary": "#F5F5F5",
+      "background_third": "#fff",
+      "background_btn": "#EE4D2D",
+      "background_btn_secondary": "#fff",
+      "type_page_font": "lato_n4",
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
+      "social_tiktok_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "blocks": {
+            "announcement-bar-0": {
+              "type": "announcement",
+              "settings": {
+                "text": "Welcome to our store"
+              }
+            }
+          },
+          "block_order": [
+            "announcement-bar-0"
+          ],
+          "settings": {
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "settings": {
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,774 @@
+
+
+<div class="fqa-container">
+
+  <ul class="fqa-menu__list">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'title' %}
+            <li class="fqa-menu__item">
+              <a href="#abc" class="fqa-menu__link">
+                {{ block.settings.title }}
+              </a>
+            </li>
+        {% endcase %}
+      {% endfor %}
+    </ul>
+
+    <div class="question grid wide container__large">
+      <ul class="list-questions"> 
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              {% if forloop.index == 1 %}
+                <li class="list-questions__item {% if block.settings.heading == blank %} hidden {% endif %}">
+                      <h2 class="list-questions__title"> 
+                        <p> {{ block.settings.heading }} </p>
+                        <span>+</span>
+                      </h2>
+                    
+                    <div class="solve active">
+                      <div class="solve-text mb-20">{{ block.settings.des1 }}</div>
+                      <div class="solve-text-info mb-40">{{ block.settings.des2 }}</div>
+
+                      <h3 class="solve-delive">{{ block.settings.sub-headings1 }}</h3>
+                      <div class="solve-text">{{ block.settings.des3 }}</div>
+                      
+                      <h3 class="solve-engravings">{{ block.settings.sub-headings2 }}</h3>
+                      <div class="mb-40 space-line">
+                          <span>
+                            {{ block.settings.des4 }}
+                          </span>                              
+                      </div>
+                  </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading2 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading2 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des12 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des22 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings12 }}</h3>
+                  <div class="solve-text">{{ block.settings.des32 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings22 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des42 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading3 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading3 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des13 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des23 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings13 }}</h3>
+                  <div class="solve-text">{{ block.settings.des33 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings23 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des43 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading4 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading4 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des14 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des24 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings14 }}</h3>
+                  <div class="solve-text">{{ block.settings.des34 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings24 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des44 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="question grid wide container__large">
+      <ul class="list-questions"> 
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              {% if forloop.index == 2 %}
+                <li class="list-questions__item {% if block.settings.heading == blank %} hidden {% endif %}">
+                      <h2 class="list-questions__title"> 
+                        <p> {{ block.settings.heading }} </p>
+                        <span>+</span>
+                      </h2>
+                    
+                    <div class="solve active">
+                      <div class="solve-text mb-20">{{ block.settings.des1 }}</div>
+                      <div class="solve-text-info mb-40">{{ block.settings.des2 }}</div>
+
+                      <h3 class="solve-delive">{{ block.settings.sub-headings1 }}</h3>
+                      <div class="solve-text">{{ block.settings.des3 }}</div>
+                      
+                      <h3 class="solve-engravings">{{ block.settings.sub-headings2 }}</h3>
+                      <div class="mb-40 space-line">
+                          <span>
+                            {{ block.settings.des4 }}
+                          </span>                              
+                      </div>
+                  </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading2 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading2 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des12 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des22 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings12 }}</h3>
+                  <div class="solve-text">{{ block.settings.des32 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings22 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des42 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading3 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading3 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des13 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des23 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings13 }}</h3>
+                  <div class="solve-text">{{ block.settings.des33 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings23 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des43 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading4 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading4 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des14 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des24 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings14 }}</h3>
+                  <div class="solve-text">{{ block.settings.des34 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings24 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des44 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="question grid wide container__large">
+      <ul class="list-questions"> 
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              {% if forloop.index == 3 %}
+                <li class="list-questions__item {% if block.settings.heading == blank %} hidden {% endif %}">
+                      <h2 class="list-questions__title"> 
+                        <p> {{ block.settings.heading }} </p>
+                        <span>+</span>
+                      </h2>
+                    
+                    <div class="solve active">
+                      <div class="solve-text mb-20">{{ block.settings.des1 }}</div>
+                      <div class="solve-text-info mb-40">{{ block.settings.des2 }}</div>
+
+                      <h3 class="solve-delive">{{ block.settings.sub-headings1 }}</h3>
+                      <div class="solve-text">{{ block.settings.des3 }}</div>
+                      
+                      <h3 class="solve-engravings">{{ block.settings.sub-headings2 }}</h3>
+                      <div class="mb-40 space-line">
+                          <span>
+                            {{ block.settings.des4 }}
+                          </span>                              
+                      </div>
+                  </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading2 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading2 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des12 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des22 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings12 }}</h3>
+                  <div class="solve-text">{{ block.settings.des32 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings22 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des42 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading3 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading3 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des13 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des23 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings13 }}</h3>
+                  <div class="solve-text">{{ block.settings.des33 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings23 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des43 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading4 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading4 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des14 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des24 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings14 }}</h3>
+                  <div class="solve-text">{{ block.settings.des34 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings24 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des44 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="question grid wide container__large">
+      <ul class="list-questions"> 
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              {% if forloop.index == 4 %}
+                <li class="list-questions__item {% if block.settings.heading == blank %} hidden {% endif %}">
+                      <h2 class="list-questions__title"> 
+                        <p> {{ block.settings.heading }} </p>
+                        <span>+</span>
+                      </h2>
+                    
+                    <div class="solve active">
+                      <div class="solve-text mb-20">{{ block.settings.des1 }}</div>
+                      <div class="solve-text-info mb-40">{{ block.settings.des2 }}</div>
+
+                      <h3 class="solve-delive">{{ block.settings.sub-headings1 }}</h3>
+                      <div class="solve-text">{{ block.settings.des3 }}</div>
+                      
+                      <h3 class="solve-engravings">{{ block.settings.sub-headings2 }}</h3>
+                      <div class="mb-40 space-line">
+                          <span>
+                            {{ block.settings.des4 }}
+                          </span>                              
+                      </div>
+                  </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading2 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading2 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des12 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des22 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings12 }}</h3>
+                  <div class="solve-text">{{ block.settings.des32 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings22 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des42 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading3 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading3 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des13 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des23 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings13 }}</h3>
+                  <div class="solve-text">{{ block.settings.des33 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings23 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des43 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading4 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading4 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des14 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des24 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings14 }}</h3>
+                  <div class="solve-text">{{ block.settings.des34 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings24 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des44 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="question grid wide container__large">
+      
+      <ul class="list-questions"> 
+        {% for block in section.blocks %}
+          {% case block.type %}
+            {% when 'title' %}
+              {% if forloop.index == 5 %}
+                <li class="list-questions__item {% if block.settings.heading == blank %} hidden {% endif %}">
+                      <h2 class="list-questions__title"> 
+                        <p> {{ block.settings.heading }} </p>
+                        <span>+</span>
+                      </h2>
+                    
+                    <div class="solve active">
+                      <div class="solve-text mb-20">{{ block.settings.des1 }}</div>
+                      <div class="solve-text-info mb-40">{{ block.settings.des2 }}</div>
+
+                      <h3 class="solve-delive">{{ block.settings.sub-headings1 }}</h3>
+                      <div class="solve-text">{{ block.settings.des3 }}</div>
+                      
+                      <h3 class="solve-engravings">{{ block.settings.sub-headings2 }}</h3>
+                      <div class="mb-40 space-line">
+                          <span>
+                            {{ block.settings.des4 }}
+                          </span>                              
+                      </div>
+                  </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading2 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading2 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des12 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des22 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings12 }}</h3>
+                  <div class="solve-text">{{ block.settings.des32 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings22 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des42 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading3 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading3 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des13 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des23 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings13 }}</h3>
+                  <div class="solve-text">{{ block.settings.des33 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings23 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des43 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+
+                <li class="list-questions__item {% if block.settings.heading4 == blank %} hidden {% endif %}">
+                  <h2 class="list-questions__title"> 
+                    <p> {{ block.settings.heading4 }} </p>
+                    <span>+</span>
+                  </h2>
+                
+                <div class="solve active">
+                  <div class="solve-text mb-20">{{ block.settings.des14 }}</div>
+                  <div class="solve-text-info mb-40">{{ block.settings.des24 }}</div>
+
+                  <h3 class="solve-delive">{{ block.settings.sub-headings14 }}</h3>
+                  <div class="solve-text">{{ block.settings.des34 }}</div>
+                  
+                  <h3 class="solve-engravings">{{ block.settings.sub-headings24 }}</h3>
+                  <div class="mb-40 space-line">
+                      <span>
+                        {{ block.settings.des44 }}
+                      </span>                              
+                  </div>
+              </div>
+                </li>
+              {% endif %}
+          {% endcase %}
+        {% endfor %}
+      </ul>
+    </div>
+    
+
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'question' %}
+          <div class="questions-more wide grid container__large">
+            <p class="questions-more--des"> {{ block.settings.question }} </p>
+            <a class="questions-more--link" href="{{ block.settings.more_link }}"> {{ block.settings.link }} </a> 
+          </div>
+      {% endcase %}
+    {% endfor %}
+
+
+</div> 
+
+
+<script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'fqa.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'openFunctionNav.js' | asset_url }}" defer="defer"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(){
+      fqa(`{{ section.id }}`)
+  })
+</script>
+
+{% schema %}
+{
+    "name": "FQA",
+    "blocks": [
+      {
+        "name": "Title",
+        "type": "title",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Title",
+            "id": "title",
+            "default": "TITLE"
+          },
+          {
+            "type": "text",
+            "label": "Heading Item 1",
+            "id": "heading",
+            "default": "WHAT ARE THE SHIPPING TIME AND COST AVAILABLE OF DERCALO1 ?"
+          },
+          {
+            "type": "richtext",
+            "label": "Description Item 1",
+            "id": "des1",
+            "default": "<p>Shipping costs are free on all orders. Please allow 8 working days for delivery.</p>"
+          },
+          {
+            "type": "richtext",
+            "label": "Description2 Item 1",
+            "id": "des2",
+            "default": "<p>Information on Mother's Day shipping</p>"
+          },
+          {
+            "type": "text",
+            "label": "Sub-headings Item 1",
+            "id": "sub-headings1",
+            "default": "DELIVERY"
+          },
+          {
+            "type": "richtext",
+            "label": "Description3 Item 1",
+            "id": "des3",
+            "default": "<p>To receive your order before Mother's Day, please make your purchase no later than 11:59 pm on Friday 30 April</p>"
+          },
+          {
+            "type": "text",
+            "label": "Sub-headings2 Item 1",
+            "id": "sub-headings2",
+            "default": "ENGRAVINGS"
+          },
+          {
+            "type": "richtext",
+            "label": "Description4 Item 1",
+            "id": "des4",
+            "default": "<p>For orders with engravings, please place your order no later than 11:59 pm on Wednesday 21st April for delivery before Mother's Day.<br> We remind you that we do not accept replacements and returns of orders that include engravings or any type of personalization.<br>Delivery of items with a personalization service may take longer. You can check the status of your order and its shipment by contacting the Customer Service on 800 935 547.</p>"
+          },
+          {
+            "type": "text",
+            "label": "Heading Item 2",
+            "id": "heading2",
+            "default": "WHAT ARE THE SHIPPING TIME AND COST AVAILABLE OF DERCALO2 ?"
+          },
+          {
+            "type": "richtext",
+            "label": "Description Item 2",
+            "id": "des12",
+            "default": "<p>Shipping costs are free on all orders. Please allow 8 working days for delivery.</p>"
+          },
+          {
+            "type": "richtext",
+            "label": "Description2 Item 2",
+            "id": "des22",
+            "default": "<p>Information on Mother's Day shipping</p>"
+          },
+          {
+            "type": "text",
+            "label": "Sub-headings Item 2",
+            "id": "sub-headings12",
+            "default": "DELIVERY"
+          },
+          {
+            "type": "richtext",
+            "label": "Description3 Item 2",
+            "id": "des32",
+            "default": "<p>To receive your order before Mother's Day, please make your purchase no later than 11:59 pm on Friday 30 April</p>"
+          },
+          {
+            "type": "text",
+            "label": "Sub-headings2 Item 2",
+            "id": "sub-headings22",
+            "default": "ENGRAVINGS"
+          },
+          {
+            "type": "richtext",
+            "label": "Description4 Item 2",
+            "id": "des42",
+            "default": "<p>For orders with engravings, please place your order no later than 11:59 pm on Wednesday 21st April for delivery before Mother's Day.<br> We remind you that we do not accept replacements and returns of orders that include engravings or any type of personalization.<br>Delivery of items with a personalization service may take longer. You can check the status of your order and its shipment by contacting the Customer Service on 800 935 547.</p>"
+          },
+          {
+            "type": "text",
+            "label": "Heading Item 3",
+            "id": "heading3",
+            "default": "WHAT ARE THE SHIPPING TIME AND COST AVAILABLE OF DERCALO3 ?"
+          },
+          {
+            "type": "richtext",
+            "label": "Description Item 3",
+            "id": "des13",
+            "default": "<p>Shipping costs are free on all orders. Please allow 8 working days for delivery.</p>"
+          },
+          {
+            "type": "richtext",
+            "label": "Description2 Item 3",
+            "id": "des23",
+            "default": "<p>Information on Mother's Day shipping</p>"
+          },
+          {
+            "type": "text",
+            "label": "Sub-headings Item 3",
+            "id": "sub-headings13",
+            "default": "DELIVERY"
+          },
+          {
+            "type": "richtext",
+            "label": "Description3 Item 3",
+            "id": "des33",
+            "default": "<p>To receive your order before Mother's Day, please make your purchase no later than 11:59 pm on Friday 30 April</p>"
+          },
+          {
+            "type": "text",
+            "label": "Sub-headings2 Item 3",
+            "id": "sub-headings23",
+            "default": "ENGRAVINGS"
+          },
+          {
+            "type": "richtext",
+            "label": "Description4 Item 3",
+            "id": "des43",
+            "default": "<p>For orders with engravings, please place your order no later than 11:59 pm on Wednesday 21st April for delivery before Mother's Day.<br> We remind you that we do not accept replacements and returns of orders that include engravings or any type of personalization.<br>Delivery of items with a personalization service may take longer. You can check the status of your order and its shipment by contacting the Customer Service on 800 935 547.</p>"
+          },
+          {
+            "type": "text",
+            "label": "Heading Item 4",
+            "id": "heading4",
+            "default": "WHAT ARE THE SHIPPING TIME AND COST AVAILABLE OF DERCALO4 ?"
+          },
+          {
+            "type": "richtext",
+            "label": "Description Item 4",
+            "id": "des14",
+            "default": "<p>Shipping costs are free on all orders. Please allow 8 working days for delivery.</p>"
+          },
+          {
+            "type": "richtext",
+            "label": "Description2 Item 4",
+            "id": "des24",
+            "default": "<p>Information on Mother's Day shipping</p>"
+          },
+          {
+            "type": "text",
+            "label": "Sub-headings Item 4",
+            "id": "sub-headings14",
+            "default": "DELIVERY"
+          },
+          {
+            "type": "richtext",
+            "label": "Description3 Item 4",
+            "id": "des34",
+            "default": "<p>To receive your order before Mother's Day, please make your purchase no later than 11:59 pm on Friday 30 April</p>"
+          },
+          {
+            "type": "text",
+            "label": "Sub-headings2 Item 4",
+            "id": "sub-headings24",
+            "default": "ENGRAVINGS"
+          },
+          {
+            "type": "richtext",
+            "label": "Description4 Item 4",
+            "id": "des44",
+            "default": "<p>For orders with engravings, please place your order no later than 11:59 pm on Wednesday 21st April for delivery before Mother's Day.<br> We remind you that we do not accept replacements and returns of orders that include engravings or any type of personalization.<br>Delivery of items with a personalization service may take longer. You can check the status of your order and its shipment by contacting the Customer Service on 800 935 547.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Question",
+        "type": "question",
+        "settings": [
+          {
+            "type": "text",
+            "label": "Question",
+            "id": "question",
+            "default": "Do you have any other questions?"
+          },
+          {
+            "type": "text",
+            "label": "Text",
+            "id": "link",
+            "default": "Contact us now"
+          },
+          {
+            "type": "url",
+            "id": "more_link",
+            "label": "Link"
+      
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "FQA",
+        "blocks": [
+          {
+            "type": "title"
+          },
+          {
+            "type": "title"
+          },
+          {
+            "type": "title"
+          },
+          {
+            "type": "title"
+          }, 
+          {
+            "type": "title"
+          },
+          {
+            "type": "question"
+          }
+        ]
+      }
+    ]
+}
+{% endschema %}

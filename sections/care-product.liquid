@@ -1,0 +1,117 @@
+
+<div class="product ">
+  <div class="grid wide1 container__large">
+    <div class="form-title title-product">
+      <h2 class="heading">
+        {{ section.settings.heading }}
+      </h2>
+      <p class="form-text title-product--text colors-text-secondary">
+        {{ section.settings.subheading }}
+      </p>
+    </div>
+
+    <div class="row">
+      {% for block in section.blocks %}
+        <div class="col l-4 m-12 c-12 mb-20 ">
+            <div class="service-box product-box">
+              {% if block.settings.options_icon == 'icon1' %}
+                {% render 'icon-water' %}
+              {% elsif block.settings.options_icon == 'icon2' %}
+                {% render 'icon-diamond' %}
+              {% else %}
+                {% render 'icon-candle-heart' %}
+              {% endif %}
+
+              <h3 class="product-title">
+                {{ block.settings.title }}
+              </h3>
+              <p class="service-descript colors-text-secondary">
+                {{ block.settings.descript }}
+              </p>
+                
+            </div>
+        </div>
+      {% endfor %}
+        
+    </div>
+
+  </div>
+
+
+</div>
+
+{% schema %}
+{
+  "name": "Care product",
+  "settings": [
+    {
+      "type":"text",
+      "label":"heading",
+      "id":"heading",
+      "default": "THINGS YOU DON’T DO WITH OUR PRODUCT"
+    },
+    {
+      "type":"text",
+      "label":"subheading",
+      "id":"subheading",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore"
+    }
+  ],
+  "blocks": [
+    {
+      "type":"text",
+      "name": "Content",
+      "settings": [
+      {
+        "type": "select",
+        "label": "Options Icon",
+        "id": "options_icon",
+        "options": [
+          {
+            "label": "icon 1",
+            "value": "icon1"
+          },
+          {
+            "label": "icon 2",
+            "value": "icon2"
+          },
+          {
+            "label": "icon 3",
+            "value": "icon3"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": " NOT TO WET IT"
+      },
+      {
+        "type": "text",
+        "id": "descript",
+        "label": "Description",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte"
+      }
+        
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Care product",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

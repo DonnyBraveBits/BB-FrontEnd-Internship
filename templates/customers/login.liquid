@@ -1,0 +1,126 @@
+<style>
+    .db{
+      display: block;
+    }
+    .page-login{
+      text-align: center;
+      margin: 60px 0;
+    }
+    .page-login h1{
+      font-size: 4rem;
+      line-height: 4rem;
+      margin-bottom: 35px;
+    }
+    .login-form input{
+      height: 4.5rem;
+      width: 40%;
+      margin-bottom: 35px;  
+      font-size: 1.6rem;
+      padding-left: 15px;
+    }
+    .login-form input::placeholder{
+      font-size: 1.6rem;
+    }
+    .login-form a{
+      font-size: 1.6rem;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+    .form-login button,
+    .login-form button {
+      background-color: rgb(226 226 226);
+      margin-bottom: 20px;
+      letter-spacing: 0;
+      font-size: 1.8rem;
+    }
+    .login-form {
+      flex-direction: column;
+    }
+    .form-login a{
+      font-size: 1.6rem;
+      text-decoration: underline;
+      margin-bottom: 20px;
+    }
+    .form-login li{
+      font-size: 1.6rem;
+      margin-bottom: 35px;
+      margin-top: 25px;
+    }
+    .error__header{
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+    }
+    .login__error{
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    .text-success,
+    .form-reset p{
+      font-size: 1.6rem;
+      margin-bottom: 35px;
+    }
+
+  @media (max-width: 1023px) {
+    .login-form input{
+        width: 70% ;
+    }
+  }
+</style>
+
+  <div class="page-login">
+    <div class="hidden form-reset">
+      <h1 id="recover" >Reset your password</h1>
+      <p>
+         We will send you an email to reset your password 
+      </p>
+
+      {% form 'recover_customer_password' %}
+        {% assign recover_success = form.posted_successfully? %}
+        <div class="login-form df">
+          <form action="/action/login" class="df">
+            <input type="email" name="email" id="Email" placeholder="Email">
+          </form>
+
+          {%- if form.errors -%}
+            <p class="login__error">{{ form.errors.messages['form'] }}</p>
+          {%- endif -%}
+
+          <button class="btn">Submit</button>
+          <a href="" class="reset-cancel db">
+            Cancel
+          </a>
+        </div>
+      {%- endform -%}     
+    </div>
+
+    <div class="form-login">
+      <h1 id="login">Login</h1>
+      {%- if recover_success == true -%}
+        <h3 class="text-success">We've sent you an email with a link to update your password</h3>
+      {%- endif -%}  
+      {%- form 'customer_login' -%}
+        {%- if form.errors -%}
+          <h2 class="error__header">Please adjust the following:</h2>
+          {{ form.errors | default_errors }}
+        {%- endif -%}
+
+        <div class="login-form">
+          <input type="email" name="customer[email]" id="CustomerEmail" placeholder="Email">     
+        </div>
+
+        {%- if form.password_needed -%}
+          <div class="login-form">
+            <input type="password" name="customer[password]" id="CustomerPassword" placeholder="Password">                 
+          </div>
+
+          <a href="#recover" class="login-forgot db">Forgot your password?</a>
+        {%- endif -%}
+
+        <button class="btn">Sign in</button>
+
+        <a href="{{ routes.account_register_url }}" class="creat-account db">Creat account</a>        
+      {%- endform -%}
+    </div>
+</div>
+
+<script src="{{ 'form.js' | asset_url }}" defer="defer"></script>

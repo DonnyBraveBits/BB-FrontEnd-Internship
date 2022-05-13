@@ -1,0 +1,83 @@
+
+<form action="{{ routes.cart_url }}" method="post" id="cart">
+  <div class="container">
+  
+    <div class="cart">
+      <div class="cart-open dfs">
+        <h1 class="cart-open__heading">
+          Your cart ({{ cart.item_count }})
+        </h1>
+        <a href="{{ routes.all_products_collection_url }}" class="cart-open__link">Continue shopping</a>
+      </div>
+  
+      <table class="cart-items">
+        <thead>
+          <tr class="cart-item__headings">
+            <th class="cart-item__heading-title"> Product</th>
+            <th class="cart-item__heading-quantity"> Quantity</th>
+            <th class="cart-item__heading-total" > Total</th>
+          </tr>
+        </thead>
+  
+        <tbody>
+          {% for item in cart.items %}
+            <tr>
+              <td class="cart-item ">
+                <div class="cart-item__detail">
+                  <img src="{{ item.image | image_url: width: 300 }}"
+                    class="cart-item__detail-image"
+                    alt="{{ item.image.alt | escape }}"
+                    loading="lazy"
+                    width="150"
+                    height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}">
+  
+                  <div class="cart-item__detail-info">
+                    {{ item.product.title | escape }}
+                  </div>
+                </div>
+                
+                <div class="cart-item__quantity">
+                  <div class="option-amount cart-item__count">
+                    <i class="bi bi-dash dash-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepDown()" ></i>
+                    <input class="product__quantity-input" min="1" type="number"  value="{{ item.quantity }}" id="Quantity-{{ item.index | plus: 1 }}"
+                    data-index="{{ item.index | plus: 1 }}"> 
+                    <i class="bi bi-plus plus-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepUp()" ></i>
+                  </div>
+                  <span>Remove</span>
+                </div>
+    
+                <div class="cart-item__totals">
+                  {{ item.final_line_price | money }}
+                </div>
+                
+                
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  
+    <div class="cart__bottom">
+        <div class="cart__bottom-total">
+      
+          <p class="cart__bottom-subtotal">
+            Subtotal: 
+            <span> {{ cart.total_price | money_with_currency }} </span>
+          </p>
+          
+          <div class="cart__bottom-btn">
+            <button type="submit" id="checkout" class="cart__bottom-checkout" name="checkout" form="cart">
+              Checkout
+            </button>
+          </div>
+        </div>
+    
+    </div>
+  </div>
+
+</form>
+
+
+<script src="{{ 'cart.js' | asset_url }}" defer="defer"></script>
+

@@ -1,0 +1,153 @@
+{
+  "sections": {
+    "main": {
+      "type": "product-detail",
+      "blocks": {
+        "0db70106-96bc-46e9-ade1-995ff2ad66d3": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "16e3edb1-a505-4da3-8a8e-9f45be8e9fb0": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "283a9cb4-38d7-491d-8bad-198f52d8f43d": {
+          "type": "select",
+          "settings": {
+          }
+        },
+        "cd922148-2be1-4327-bb41-d23fe63bb1b5": {
+          "type": "buynow",
+          "settings": {
+          }
+        },
+        "8cd36941-4fa5-45e1-bed2-ddae4f1488b9": {
+          "type": "descript",
+          "settings": {
+          }
+        },
+        "77c0635b-c993-475c-86b0-6287d9171f75": {
+          "type": "review",
+          "settings": {
+          }
+        },
+        "6941c3c3-bbdb-4838-98de-7b54f3e720f8": {
+          "type": "gift",
+          "settings": {
+            "image_picker": "shopify:\/\/shop_images\/detail-img-5.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "0db70106-96bc-46e9-ade1-995ff2ad66d3",
+        "16e3edb1-a505-4da3-8a8e-9f45be8e9fb0",
+        "283a9cb4-38d7-491d-8bad-198f52d8f43d",
+        "cd922148-2be1-4327-bb41-d23fe63bb1b5",
+        "8cd36941-4fa5-45e1-bed2-ddae4f1488b9",
+        "77c0635b-c993-475c-86b0-6287d9171f75",
+        "6941c3c3-bbdb-4838-98de-7b54f3e720f8"
+      ],
+      "settings": {
+      }
+    },
+    "165208429954e89793": {
+      "type": "info-product",
+      "blocks": {
+        "1652084299dcf9e1b1-0": {
+          "type": "Product",
+          "settings": {
+            "title": "PRODUCT INFORMATION",
+            "img": "shopify:\/\/shop_images\/detail-img-6.jpg"
+          }
+        },
+        "1652084299dcf9e1b1-1": {
+          "type": "Service",
+          "settings": {
+            "title": "OUR SERVICE",
+            "img": "shopify:\/\/shop_images\/cat-poses-perfectly.jpg"
+          }
+        },
+        "1652084299dcf9e1b1-2": {
+          "type": "Payment",
+          "settings": {
+            "title": "PAYMENT METHOD",
+            "img": "shopify:\/\/shop_images\/irish-setter-dog-close-up.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1652084299dcf9e1b1-0",
+        "1652084299dcf9e1b1-1",
+        "1652084299dcf9e1b1-2"
+      ],
+      "settings": {
+      }
+    },
+    "1652084402f55e8b69": {
+      "type": "featured-product",
+      "settings": {
+        "options": "center",
+        "heading": "FEATURED PRODUCT",
+        "collection": "bracelets"
+      }
+    },
+    "1652084438db6fd785": {
+      "type": "service-shipping",
+      "blocks": {
+        "1652084438c951cb9d-0": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": ""
+          }
+        },
+        "1652084438c951cb9d-1": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": ""
+          }
+        },
+        "1652084438c951cb9d-2": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": ""
+          }
+        },
+        "1652084438c951cb9d-3": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1652084438c951cb9d-0",
+        "1652084438c951cb9d-1",
+        "1652084438c951cb9d-2",
+        "1652084438c951cb9d-3"
+      ],
+      "settings": {
+        "heading": "OUR SERVICES"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "165208429954e89793",
+    "1652084402f55e8b69",
+    "1652084438db6fd785"
+  ]
+}

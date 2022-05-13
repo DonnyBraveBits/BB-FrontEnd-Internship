@@ -1,0 +1,149 @@
+
+.fqa-menu__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 110px;
+    margin-bottom: 60px;
+}
+
+.question {
+    display: none;
+}
+
+.question.active {
+    display: block;
+}
+
+.fqa-menu__item {
+    margin: 0 30px;
+    padding: 10px;
+    position: relative;
+}
+
+.fqa-menu__link {
+    font-size: 2.2rem;
+    line-height: 3.4rem;
+    letter-spacing: var(--letter-spacing);
+    font-weight: 600;
+    color: var(--text-color-secondary);
+}
+
+.fqa-menu__link.fqa-menu__link--active {
+    color: var(--text-color);
+}
+
+.fqa-menu__item.active::after {
+    position: absolute;
+    content: '';
+    width: 104%;
+    height: 2px;
+    left: -2%;
+    bottom: 0px;
+    background-color: #171719;
+}
+
+.list-questions {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.list-questions__item {
+    position: relative;
+    cursor: pointer;
+}
+
+.list-questions__title {
+    font-size: 1.6rem;
+    line-height: 2.5rem;
+    letter-spacing: var(--letter-spacing);
+    font-weight: 600;
+    position: relative;
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+.list-questions__title p {
+    text-transform: uppercase;
+}
+
+.list-questions__title span {
+    font-size: 4rem;
+    cursor: pointer;
+    color: #171719;
+}
+
+.list-questions__item::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0px;
+    background-color: #ABAAB3;
+}
+
+
+.solve {
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+.solve.active {
+
+}
+
+.solve-text {
+    line-height: 3rem;
+}
+
+.solve-delive {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.solve-engravings {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.solve p {
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    color: var(--text-color-secondary);
+}
+
+.space-line span{
+    margin-bottom: 20px;
+    display: block;
+    line-height: 3.2rem;
+}
+
+.questions-more {
+    padding: 100px 0;
+    text-align: center;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+}
+
+.questions-more--link,
+.quetions-more a {
+    text-decoration: underline;
+    color: var(--text-color);
+}
+
+.questions-more--des,
+.questions-more--link{
+    text-align: center;
+    font-size: 2rem;
+    line-height: 3rem;
+    font-weight: 600;
+    margin-left: 4px;
+    display: block;
+}

@@ -1,0 +1,72 @@
+{
+  "sections": {
+    
+    "1652062584a605c630": {
+      "type": "sub-header",
+      "settings": {
+        "heading": "CONTACT US"
+      }
+    },
+    "16520625718dd0424e": {
+      "type": "contact",
+      "blocks": {
+        "16520625715a4887d9-0": {
+          "type": "column",
+          "settings": {
+            "options_icon": "email",
+            "description": "SEND US AN EMAIL",
+            "detail": "Fill in the form"
+          }
+        },
+        "16520625715a4887d9-1": {
+          "type": "column",
+          "settings": {
+            "options_icon": "Phone-around",
+            "description": "WRITE US ON WHATAPP",
+            "detail": "+39 348 317 9151"
+          }
+        },
+        "16520625715a4887d9-2": {
+          "type": "column",
+          "settings": {
+            "options_icon": "Phone",
+            "description": "CALL US",
+            "detail": "800 987 654"
+          }
+        },
+        "16520625715a4887d9-3": {
+          "type": "column",
+          "settings": {
+            "options_icon": "Chat",
+            "description": "CHAT WITH US",
+            "detail": "800 987 654"
+          }
+        },
+        "16520625715a4887d9-4": {
+          "type": "time",
+          "settings": {
+            "description": "CUSTOMER SERVICE OPENING HOURS",
+            "daily_time": "Monday-Friday: 09: 00-18: 30",
+            "weekend": "Saturday: 09: 00-12: 30"
+          }
+        }
+      },
+      "block_order": [
+        "16520625715a4887d9-0",
+        "16520625715a4887d9-1",
+        "16520625715a4887d9-2",
+        "16520625715a4887d9-3",
+        "16520625715a4887d9-4"
+      ],
+      "settings": {
+        "heading": "OUR CONSULTANTS WILL BE HAPPY TO HELP YOU",
+        "description": "Before contacting us we recommend that you read the frequently asked questions"
+      }
+    }
+  },
+  "order": [
+    
+    "1652062584a605c630",
+    "16520625718dd0424e"
+  ]
+}

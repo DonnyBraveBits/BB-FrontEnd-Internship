@@ -1,0 +1,55 @@
+<style>
+    .page-login{
+      text-align: center;
+      margin: 60px 0;
+    }
+    .page-login h1{
+      font-size: 4rem;
+      line-height: 4rem;
+      margin-bottom: 35px;
+    }
+    .login-form{
+      flex-direction: column;
+    }
+    .login-form input{
+      height: 4.5rem;
+      width: 40%;
+      margin-bottom: 35px;  
+      font-size: 1.6rem;
+      padding-left: 15px;
+    }
+    .login-form input::placeholder{
+      font-size: 1.6rem;
+    }
+    .login-form button {
+      background-color: rgb(226 226 226);
+      margin-bottom: 20px;
+      letter-spacing: 0;
+      font-size: 1.8rem;
+    }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .login-form input{
+        width: 70% ;
+    }
+  }
+</style>
+
+<div class="page-login">
+    <h1>Create account</h1>
+
+    {% form 'create_customer' %}
+      {% if form.errors %}
+        <h2>Please adjust the following:</h2>
+      {% endif %}
+
+      <div class="login-form df">
+          <input type="text" placeholder="Fisrt name" name="customer[first_name]" id="RegisterForm-FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
+          <input type="text" placeholder="Last name" name="customer[last_name]" id="RegisterForm-LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+          <input type="email" placeholder="Email" name="customer[email]" id="RegisterForm-email" {% if form.email %}value="{{ form.email }}"{% endif %}>
+          <input type="password" placeholder="Password" name="customer[password]" id="RegisterForm-password" {% if form.password %}value="{{ form.password }}"{% endif %}>
+          <button class="btn login__form--btn">
+            Create
+          </button> 
+      </div>
+    {% endform %}
+</div>

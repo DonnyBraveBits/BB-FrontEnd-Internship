@@ -1,0 +1,216 @@
+{
+  "sections": {
+    "165206148171f6bc7a": {
+      "type": "sub-header",
+      "settings": {
+        "heading": "BRAND HISTORY"
+      }
+    },
+    "16520615045491761a": {
+      "type": "video-with-text-history",
+      "blocks": {
+        "16520615046ece331d-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "BIRTH OF THE BRAND"
+          }
+        },
+        "16520615046ece331d-1": {
+          "type": "description",
+          "settings": {
+            "richtext": "<p>The DE CARLO brand was born in Florence on November 7, 2019, thanks to the passion for precious stones that Nicholas De Carlo, a Florentine entrepreneur, has cultivated since he was a child. <br> Nicholas' goal was to launch a new line of jewelry, with a modern and innovative design, able to make all women feel unique and inimitable.<br> All this was possible thanks to creations suitable for every occasion, with shapes that recall the essence of the maison: ELEGANCE, QUALITY, PASSION.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "16520615046ece331d-0",
+        "16520615046ece331d-1"
+      ],
+      "settings": {
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "imagevid": "shopify:\/\/shop_images\/img1.jpg",
+        "position": "above"
+      }
+    },
+    "1652061608524dc688": {
+      "type": "image-with-text",
+      "blocks": {
+        "1652061608b378b673-0": {
+          "type": "icon",
+          "settings": {
+            "options_icon": "icon1"
+          }
+        },
+        "1652061608b378b673-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "ELEGANCE"
+          }
+        },
+        "1652061608b378b673-2": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "DE CARLO means elegance"
+          }
+        },
+        "1652061608b378b673-3": {
+          "type": "description",
+          "settings": {
+            "richtext": "<p>exhibited thanks to the shining and refined stones that portray the contemporary era, sensual, simple and eye-catching creations that perfectly frame the female body, enhancing its natural beauty.<\/p>"
+          }
+        },
+        "1652061608b378b673-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img2.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1652061608b378b673-0",
+        "1652061608b378b673-1",
+        "1652061608b378b673-2",
+        "1652061608b378b673-3",
+        "1652061608b378b673-4"
+      ],
+      "settings": {
+        "layout": "left",
+        "width": "full"
+      }
+    },
+    "16520616211a79a79a": {
+      "type": "image-with-text",
+      "blocks": {
+        "1652061621f342caf5-0": {
+          "type": "icon",
+          "settings": {
+            "options_icon": "icon2"
+          }
+        },
+        "1652061621f342caf5-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "ELEGANCE"
+          }
+        },
+        "1652061621f342caf5-2": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "DE CARLO means elegance"
+          }
+        },
+        "1652061621f342caf5-3": {
+          "type": "description",
+          "settings": {
+            "richtext": "<p>exhibited thanks to the shining and refined stones that portray the contemporary era, sensual, simple and eye-catching creations that perfectly frame the female body, enhancing its natural beauty.<\/p>"
+          }
+        },
+        "1652061621f342caf5-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img3.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "1652061621f342caf5-0",
+        "1652061621f342caf5-1",
+        "1652061621f342caf5-2",
+        "1652061621f342caf5-3",
+        "1652061621f342caf5-4"
+      ],
+      "settings": {
+        "layout": "right",
+        "width": "full"
+      }
+    },
+    "165206162687e77b6e": {
+      "type": "image-with-text",
+      "blocks": {
+        "16520616267dc415ad-0": {
+          "type": "icon",
+          "settings": {
+            "options_icon": "icon3"
+          }
+        },
+        "16520616267dc415ad-1": {
+          "type": "heading",
+          "settings": {
+            "heading": "ELEGANCE"
+          }
+        },
+        "16520616267dc415ad-2": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "DE CARLO means elegance"
+          }
+        },
+        "16520616267dc415ad-3": {
+          "type": "description",
+          "settings": {
+            "richtext": "<p>exhibited thanks to the shining and refined stones that portray the contemporary era, sensual, simple and eye-catching creations that perfectly frame the female body, enhancing its natural beauty.<\/p>"
+          }
+        },
+        "16520616267dc415ad-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/img4.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "16520616267dc415ad-0",
+        "16520616267dc415ad-1",
+        "16520616267dc415ad-2",
+        "16520616267dc415ad-3",
+        "16520616267dc415ad-4"
+      ],
+      "settings": {
+        "layout": "left",
+        "width": "full"
+      }
+    },
+    "1652061632b170b2f5": {
+      "type": "image-banner",
+      "blocks": {
+        "1652061632eea00db8-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "WHY CHOOSE US ?",
+            "optionSize": "large"
+          }
+        },
+        "1652061632eea00db8-1": {
+          "type": "Description",
+          "settings": {
+            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu"
+          }
+        },
+        "1652061632eea00db8-3": {
+          "type": "Button",
+          "settings": {
+            "Button": "BACK TO SHOPPING NOW",
+            "Botton_url": "shopify:\/\/pages\/history"
+          }
+        }
+      },
+      "block_order": [
+        "1652061632eea00db8-0",
+        "1652061632eea00db8-1",
+        "1652061632eea00db8-3"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/img5.jpg",
+        "options": "center"
+      }
+    }
+  },
+  "order": [
+    "165206148171f6bc7a",
+    "16520615045491761a",
+    "1652061608524dc688",
+    "16520616211a79a79a",
+    "165206162687e77b6e",
+    "1652061632b170b2f5"
+  ]
+}

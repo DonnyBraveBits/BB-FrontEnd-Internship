@@ -1,0 +1,245 @@
+<div class="footer background-primary container__large">
+    <div class="footer-grap grid wide1">
+
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when "logo" %}
+            <div class="footer-logo">
+              {% if block.settings.logo == blank and block.settings.nameshop != blank %}
+                <a href="{{ routes.root_url }}" class="text-color">{{ block.settings.nameshop }}</a>
+              {% elsif block.settings.logo == blank and block.settings.nameshop == blank %}  
+                {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+              {% else %}
+                <a href="{{ routes.root_url }}">
+                  <img src="{{ block.settings.logo| img_url: 'large' }}" alt="">
+                </a>
+              {% endif %}
+            </div>
+                
+        <div class="row">
+          {% when "Column" %}
+            <div class="col l-3 m-6 c-12 mb-60 mb-order mb-50-tab">
+              <p class="footer-title text-color mb-20">
+                {{ block.settings.Column_heading }}
+              </p>
+              <ul class="footer-list">
+                {% for link in block.settings.menu.links %}
+                  <li class="footer-item">
+                    <a class="footer-link colors-text-secondary" href="{{ link.url }}">{{ link.title }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
+
+          {% when "detail" %}         
+            <div class="col l-3 m-6 c-12 mb-60 mb-order mb-50-tab">
+                <div class="footer-title text-color mb-20">
+                    {{ block.settings.heading }}
+                </div>
+                <ul class="footer-list">
+                    <li class="footer-item">
+                      <p class="footer-link colors-text-secondary">
+                        {{ block.settings.name_company }}
+                      </p>
+                    </li>
+                    <li class="footer-item">
+                      <p class="footer-link colors-text-secondary">
+                        {{ block.settings.vat }}
+                      </p>
+                    </li>
+                    <li class="footer-item">
+                      <p class="footer-link colors-text-secondary">
+                        {{ block.settings.rea }}
+                      </p>
+                    </li>
+                    <li class="footer-item">
+                      <p class="footer-link footer-addres colors-text-secondary">
+                        {{ block.settings.Registered }}
+                      </p>
+                    </li>
+                </ul>
+            </div>
+
+          {% when "contact" %}
+            <div class="col l-3 m-6 c-12 mb-60 mb-order mb-50-tab">
+              <div class="footer-title text-color mb-20">
+                {{ block.settings.heading }}
+              </div>
+
+                <form action="">
+                    <div class="form-email">
+                        <input required type="email" name="" class="colors-text-secondary" id="inputEmail" placeholder="Your Email">
+                        <button class="text-color">Subscribe</button>
+                    </div>
+                </form>
+                <div class="footer-social text-color">
+                    SOCIAL
+                </div>
+                <ul class="footer-social__list">
+                    <li>
+                      {%- if settings.social_facebook_link != blank -%}
+                        <a href="{{ settings.social_facebook_link | escape }}" class="footer-icon">
+                            {% render 'icon-facebook' %}
+                        </a>
+                      {%- endif -%}
+                    </li>
+
+                    <li>
+                      {%- if settings.social_facebook_link != blank -%}
+                        <a href="{{ settings.social_instagram_link | escape }}" class="footer-icon">
+                          {% render 'icon-instagram' %}
+                        </a>
+                      {%- endif -%}
+                    </li>
+
+                    <li>
+                      {%- if settings.social_linkedin_link != blank -%}
+                        <a href="{{ settings.social_linkedin_link | escape }}" class="footer-icon">
+                            {% render 'icon-linkedin' %}
+                        </a>
+                      {%- endif -%}
+                    </li>
+
+                    <li>
+                      {%- if settings.social_youtube_link != blank -%}
+                        <a href="{{ settings.social_youtube_link | escape }}" class="footer-icon">
+                            {% render 'icon-youtube' %}
+                        </a>
+                      {%- endif -%}
+                    </li>
+                </ul>
+                
+            </div>
+        </div>
+
+          {% when "creat" %}
+            <p class="footer-ifo colors-text-secondary">
+                {{ block.settings.description }}
+            </p>
+            <p class="author colors-text-secondary">{{ block.settings.Producted }}</p>
+          
+          {% endcase %}
+        {% endfor %}
+    
+      </div>
+</div>
+
+{% schema %}
+{
+  "name": "footer",
+  "settings":[
+
+  ],
+    "blocks":[
+    {
+      "type": "logo",
+      "name": "Logo Shop",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Type name shop",
+          "default": "Name Shop",
+          "id": "nameshop"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image logo",
+          "id": "logo"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "main-menu",
+          "label": "Menu"
+        }
+      ] 
+    },
+    {
+      "type": "Column",
+      "name": "Column",
+      "limit": 2,
+      "settings":[
+        {
+          "type": "text",
+          "id": "Column_heading",
+          "label": "Heading",
+          "default": "CUSTOMER CARE:"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "Menu"
+        }
+      ]
+    },
+    {
+      "type": "detail",
+      "name": "Infomation",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Infomation Heading",
+          "default": "LEGAL INFORMATION:"
+        },
+        {
+          "type": "text",
+          "id": "name_company",
+          "label": "Name Company",
+          "default": "Company name: De Carlo Nicholas:"
+        },
+        {
+          "type": "text",
+          "id": "vat",
+          "label": "VAT number",
+          "default": "VAT number: 07020260480"
+        },
+        {
+          "type": "text",
+          "id": "rea",
+          "label": "REA",
+          "default": "REA: FI-674952"
+        },
+        {
+          "type": "text",
+          "id": "Registered",
+          "label": "Registered office",
+          "default": "Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy"
+        }
+      ]
+    },
+    {
+      "type": "contact",
+      "name": "Contact & Socials",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading",
+          "default": "SUBSCRIBE FOR NEWSLETTER"
+        }
+      ]
+    },
+    {
+      "type": "creat",
+      "name": "Description",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "description",
+          "default": "De Carlo Nicholas- VAT number: 07020260480- REA: FI-674952 - Registered office: Via di San Quirico a Ruballa 15, 50012, Bagno a Ripoli (FI), Italy"
+        },
+        {
+          "type": "text",
+          "label": "Producted",
+          "id": "Producted",
+          "default": "© 2022 created Thành Đạt"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

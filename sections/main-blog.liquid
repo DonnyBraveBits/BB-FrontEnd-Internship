@@ -1,0 +1,28 @@
+
+
+<div class="container">
+  <div class="blogs">
+    <h1 class="blogs__heading color-text-primary">News</h1>
+
+    <ul class="blogs__list">
+      {% for article in blog.articles %}
+        <li class="blogs__items">
+          <div class="article">
+            <a href="{{ article.url }}" class="article__image">
+              <img src="{{ article.image | img_url: "master" }}" alt="" class="article__image">
+            </a>
+            <a href="{{ article.url }}" class="article__heading">{{ article.title }}</a>
+            <span class="article__created-at">
+              {{ article.created_at | date: "%a, %b %d, %y" }}
+            </span>
+            <div class="article__content">
+              {{ article.content }}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+      
+    </ul>
+  </div>
+
+</div>

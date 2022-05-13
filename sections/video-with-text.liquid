@@ -1,0 +1,174 @@
+<div class="discover">
+  <div class="discover-wrap grid wide1 container__large">
+    <div class="row no-gutters">
+
+      {% if section.settings.layout == 'left' %}      
+        <div class="col l-6 m-6 c-12">
+          <div class="discover-vid">
+            
+            <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+
+            <img class="discover-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+
+            
+            {%- if section.settings.video_url.type == 'youtube' -%}
+              <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+            {%- else -%}
+              <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+            {%- endif -%}
+
+            <!-- <video controls class="control-video" src="./assets/video/video-ad.mp4"></video> -->
+          </div>
+        </div>
+      {% endif %}
+
+      <div class="col l-6 m-6 c-12  ">
+        <div class="discover-wrapper background_secondary">
+          <div class="discover-content">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'heading' %}
+                  <h2 class="heading">
+                    {{ block.settings.heading }}
+                  </h2>
+                {% when 'description' %}
+                  <div class="discover-content__text">
+                    {{ block.settings.richtext }}
+                  </div>
+                {% when 'link' %}
+                  <div class="">
+                    <a href="{{ block.settings.link }}" class="btn">
+                      {{ block.settings.btn }}
+                    </a>
+                  </div>
+                {% endcase %}
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      {% if section.settings.layout == 'right' %}
+        <div class="col l-6 m-6 c-12">
+          <div class="discover-vid">
+            
+            <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+
+            <img class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+
+            
+            {%- if section.settings.video_url.type == 'youtube' -%}
+              <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+            {%- else -%}
+              <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo control-video" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+            {%- endif -%}
+
+            <!-- <video controls class="control-video" src="./assets/video/video-ad.mp4"></video> -->
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<!-- <script src="{{ 'playVideo.js' | asset_url }}" defer="defer"></script> -->
+
+{% schema %}
+{
+  "name": "Video with text",
+  "settings": [
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "URL",
+      "placeholder": "Thanh123 test",
+      "info": "Video plays in the page."
+    },
+    {
+      "type": "image_picker",
+      "id": "imagevid",
+      "label": "Cover image"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Image alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    }
+    
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "WE FOCUS ON WHAT’S REALLY IMPORTANT"
+        }
+      ]
+    },
+    {
+      "name": "Descript",
+      "type": "description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Descript",
+          "default": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte</p>"
+        }
+      ]
+    },
+    {
+      "name": "Link & url",
+      "type": "link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "btn",
+          "label": "Link label",
+          "default": "DISCOVER THE STORY"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video with text",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "description"
+        },
+        {
+          "type": "link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

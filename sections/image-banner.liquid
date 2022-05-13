@@ -1,0 +1,164 @@
+<div class="collection">
+  <div class="collection-wrap">
+    <div class="collection-img">
+      {%- if section.settings.image != blank -%}
+        <img src="{{ section.settings.image | img_url: 'master' }}"/>
+      {%- elsif section.settings.image == blank -%}
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {%- endif -%}
+    </div>
+
+    <div class="collection-content grid wide1 {% if section.settings.options == 'center' %} text-center {% endif %} ">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'heading' %}
+            <h2 class="heading collection-heading text-color {{ block.settings.optionSize }}">
+              {{ block.settings.heading }}
+            </h2>
+          {% when 'Description' %}
+            <p class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %}">
+              {{ block.settings.Description }}
+            </p>
+          {% when 'Link' %}
+            <a href="{{ block.settings.more_link }}" class="collection-more text-color">
+              {{ block.settings.Link }}
+              {% if block.settings.Link != blank %}
+                {% render 'icon-arrow-right-white' %}
+              {% endif %}
+            </a>
+          {% when 'Button' %}
+            <a href="{{ block.settings.Botton_url }}" class="btn">
+              {{ block.settings.Button }}
+            </a>
+        {% endcase %}
+      {% endfor %}
+
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image"
+    },
+    {
+      "type": "select",
+      "label": "Options content",
+      "id": "options",
+      "options": [
+        {
+          "label": "Text center",
+          "value": "center"
+        },
+        {
+          "label": "Text left",
+          "value": "left"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading",
+          "default": "NEW COLLECTION 2021"  
+        },
+        {
+          "type": "select",
+          "label": "Options size heading",
+          "id": "optionSize",
+          "options": [
+            {
+              "label": "Large",
+              "value": "large"
+            },
+            {
+              "label": "Medium",
+              "value": "medium"
+            },
+            {
+              "label": "Small",
+              "value": "small"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Description",
+      "type": "Description",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "Description",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu" 
+        }
+      ]
+    },
+    {
+      "name": "Link",
+      "type": "Link",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Link",
+          "id": "Link",
+          "default": "SEE MORE"  
+        },
+        {
+          "type": "url",
+          "id": "more_link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Button",
+          "id": "Button",
+          "default": "BACK TO SHOPPING NOW"  
+        },
+        {
+          "type": "url",
+          "label": "Botton url ",
+          "id": "Botton_url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image Banner",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "Description"
+        },
+        {
+          "type": "Link"
+        },
+        {
+          "type": "Button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

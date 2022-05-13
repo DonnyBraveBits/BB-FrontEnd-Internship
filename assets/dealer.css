@@ -1,0 +1,109 @@
+
+
+.form-container {
+    
+    padding-bottom: 100px;
+}
+
+.form-title {
+    text-align: center;
+    margin: 100px 0;
+}
+
+.form-text {
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    margin-top: 15px;
+}
+
+.form-select {
+    display: block;
+    width: 100%;
+    padding: 18px 20px;
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    color: var(--text-color);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    border: 1px solid #ECECEC;
+    box-shadow: none;
+    background: rgb(255, 255, 255);
+    position: relative;
+    cursor: pointer;
+}
+
+.select{
+    position: relative;
+}
+
+.select::after {
+    content: '';
+    position: absolute;
+    top: calc(50%);
+    right: 29px;
+    height: 7px;
+    width: 12px;
+    z-index: 1000;
+    background: url(../icon/arrow-down-dark.svg) no-repeat center center / cover;
+    pointer-events: none;
+    cursor: pointer;
+
+  }
+
+.form-label {
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    font-weight: 600;
+    margin-bottom: 11px;
+    color: var(--text-color);
+    display: block;
+    
+}
+
+.form-input{
+    display: block;
+    width: 100%;
+    padding: 18px 20px;
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    /* color: var(--text-color-secondary); */
+    border: 1px solid #ECECEC;
+    outline: none;
+}
+
+.form-mess {
+    padding-bottom: 108px;
+}
+
+.form-choose {
+    display: flex;
+    align-items: center;
+}
+
+#checked2,
+#checked1 {
+    width: 24px;
+    height: 24px;
+}
+
+input[type="checkbox"] {
+    margin-right: 20px;
+}
+
+.form-choose label {
+    font-size: var(--font-size-regular);
+    line-height: var(--line-height-regular);
+    color: var(--text-color);
+}
+
+.btn-submit {
+    padding: 13px 38px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+

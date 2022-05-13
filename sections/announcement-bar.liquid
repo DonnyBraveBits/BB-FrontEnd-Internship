@@ -1,0 +1,45 @@
+
+{%- for block in section.blocks -%}
+  {%- case block.type -%}
+    {%- when 'announcement' -%}
+      <div class="background-primary container__large container-pc-low">
+        <div class="header-above__contain wide-header-above grid">
+          <span></span>
+          <div class="heading-header text-color">
+            {{ block.settings.text  }}
+          </div>
+          <div class="language">
+            <select class="laguage-select text-color background-primary">
+              <option selected>Italian</option>
+              <option >English</option>
+              <option >Vietnamese</option>
+              <option >Thailand</option>
+            </select>
+          </div>
+        </div>
+      </div>
+  {% endcase %}
+{% endfor %}
+    
+
+{% schema %}
+{
+  "name": "Announcement",
+  "blocks": [
+    {
+      "type": "announcement",
+      "name": "Announcement ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "default": "Welcome to our store",
+          "label": "Text"
+        }
+      ]
+    }
+    
+  ]
+}
+{% endschema %}
+

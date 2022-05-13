@@ -1,0 +1,45 @@
+
+@media (max-width: 767px) {
+    .title-product {
+        margin: 40px 0 50px;
+    }
+
+    .title-product--text {
+        margin-top: 20px;
+    }
+    
+    .mb-40 {
+        margin-bottom: 40px;
+    }
+    
+}
+
+/* tablet */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    
+}
+
+/* tab-mobile */
+
+@media (max-width: 1023px) {
+    
+    
+}
+
+/* pc */
+
+@media (min-width: 1024px) {
+    
+}
+
+/* pc resolution */
+
+@media (min-width: 1024px) and (max-width: 1362px) {
+    .product-box {
+        padding: 40px 23px 40px;
+       
+    }
+
+    
+}

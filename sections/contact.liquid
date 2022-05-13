@@ -1,0 +1,164 @@
+
+<div class="contact-container">
+    
+    <div class="container__large ">
+      <div class="grid wide1">
+        <div class="form-title ">
+          <h2 class="heading">
+            {{ section.settings.heading }}
+          </h2>
+          <p class="form-text colors-text-secondary">
+            {{ section.settings.description }}   
+          </p>
+        </div>
+
+        <div class="row">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'column' %}
+                <div class="col l-3 c-12 mb-20">
+                  <div class="service-box contact-box">
+                    {% if block.settings.options_icon == 'email' %}
+                      {% render 'icon-email' %}
+                    {% elsif block.settings.options_icon == 'Phone-around' %}
+                      {% render 'icon-phone-around' %}
+                    {% elsif block.settings.options_icon == 'Phone' %}
+                      {% render 'icon-phone' %}
+                    {% else %}
+                      {% render 'icon-chat' %}
+                    {% endif %}
+                    <h3 class="product-title contact-title ">
+                      {{ block.settings.description }}
+                    </h3>
+                    <p class="service-descript colors-text-secondary">
+                      {{ block.settings.detail }}
+                    </p>
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="hours-open">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'time' %}
+            <h2 class="hours-open__heading">{{ block.settings.description }}</h2>
+            <span class="{% if block.settings.daily_time == blank %} hidden {% endif %}">{{ block.settings.daily_time }}</span>
+            <span class="{% if block.settings.weekend == blank %} hidden {% endif %}">{{ block.settings.weekend }}</span>
+        {% endcase %}
+      {% endfor %}
+    </div>
+ </div> 
+
+{% schema %}
+{
+  "name": "Contact",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "OUR CONSULTANTS WILL BE HAPPY TO HELP YOU"
+    },
+    {
+      "type": "text",
+      "label": "Description",
+      "id": "description",
+      "default": "Before contacting us we recommend that you read the frequently asked questions"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Column",
+      "limit": 4,
+      "settings":[
+        {
+          "type": "select",
+          "label": "Options Icon",
+          "id": "options_icon",
+          "options": [
+            {
+              "label": "Email",
+              "value": "email"
+            },
+            {
+              "label": "Phone Around",
+              "value": "Phone-around"
+            },
+            {
+              "label": "Phone",
+              "value": "Phone"
+            },
+            {
+              "label": "Chat",
+              "value": "Chat"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "description",
+          "default": "SEND US AN EMAIL"
+        },
+        {
+          "type": "text",
+          "label": "Detail",
+          "id": "detail",
+          "default": "Fill in the form"
+        }
+      ]
+    },
+    {
+      "type": "time",
+      "name": "Time",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "description",
+          "default": "CUSTOMER SERVICE OPENING HOURS"
+        },
+        {
+          "type": "text",
+          "label": "Daily Time",
+          "id": "daily_time",
+          "default": "Monday-Friday: 09: 00-18: 30"
+        },
+        {
+          "type": "text",
+          "label": "Weekend",
+          "id": "weekend",
+          "default": "Saturday: 09: 00-12: 30"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "time"
+        }
+      ]
+    }
+  ]
+ }
+{% endschema %}

@@ -1,0 +1,22 @@
+{
+  "sections": {
+    
+    "1652062263b1a51af3": {
+      "type": "sub-header",
+      "settings": {
+        "heading": "BECOME A DEALER"
+      }
+    },
+    "1652062266dcbd025f": {
+      "type": "dealer",
+      "settings": {
+        "heading": "BECOME OFFICIAL DE CARLO DEALER",
+        "subheading": "Exclusive jewels with a contemporary design, handcrafted finished and able to arouse emotions"
+      }
+    }
+  },
+  "order": [
+    "1652062263b1a51af3",
+    "1652062266dcbd025f"
+  ]
+}

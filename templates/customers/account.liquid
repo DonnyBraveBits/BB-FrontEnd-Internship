@@ -1,0 +1,56 @@
+<style>
+  .page__account-welcome{
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .page__account-welcome h2{
+    font-size: 4rem;
+    font-style: italic;
+  }
+  .page__account-welcome img{
+    width: 55%;
+  }
+  .page__account-log{
+    display: flex;
+    align-items: center;
+  }
+  .page__account{
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .page__account a{
+    margin-left: 30px;
+    font-size: 1.6rem;
+  }
+  .page__account a svg{
+    margin-right: 5px;
+  }
+  .page__account-info p{
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+  }
+  .mt40{
+    margin-top: 40px !important;
+  }
+</style>
+
+
+<div class="page__account grid wide mt40">
+  <div class="page__account-log">
+    <h1>Account</h1>
+    <a href="{{ routes.account_logout_url }}">
+      {% render 'icon-user' %}
+      Log out
+    </a>
+  </div>
+  <div class="page__account-info">
+    {{ customer.default_address | format_address }}
+  </div>
+</div>
+
+<div class="page__account-welcome">
+  <h2>Wellcome to ThanhDat shop!!!!!</h2>
+  <img src="http://befat.net/wp-content/uploads/2017/11/welcome-to-our-shopping-page-e1511999831138.png" alt="">
+</div>
+

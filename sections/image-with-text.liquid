@@ -1,0 +1,237 @@
+
+
+<div class="feature {% if section.settings.width == 'full' %} background_secondary {% endif %}">
+  <div class="featured-wrap grid wide1 ">
+    <div class="row no-gutters df {% if section.settings.width == 'large' %} featured-options--bgc {% endif %}">
+    {% if section.settings.layout == 'left' %}
+      <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
+        <div class="featured-options discover-content ">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when "icon"%}
+                {% if block.settings.options_icon == 'icon1' %}
+                  {% render 'icon-bracelet' %}
+                {% elsif block.settings.options_icon == 'icon2' %}
+                  {% render 'icon-diamond' %}
+                {% else %}
+                  {% render 'icon-candle-heart' %}
+                {% endif %}
+              {% when 'heading' %}
+                <div class="featured-title">{{ block.settings.heading }}</div>
+              {% when 'subheading' %}
+                <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
+              {% when 'description' %}
+              <div class="featured-descript colors-text-secondary">
+                {{ block.settings.richtext }}
+              </div>
+              {% when 'button' %}
+              <a href="{{ block.settings.link }}" class="btn featured-btn">
+                {{ block.settings.button }}
+              </a>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+          
+    <div class="col c-12 m-12 l-6 oder-tab-mb-1 {% if section.settings.layout == 'left' %} dfe {% endif %}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+        {% when 'image' %}
+            {%- if block.settings.image != blank -%}
+              <img class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | img_url: "master" }}" alt="">
+            {%- else -%}
+              {{ 'collection-1' | placeholder_svg_tag: 'featured-img bg-gray ' }}
+            {%- endif -%} 
+        {% endcase %}
+      {% endfor %}
+    </div>
+
+    {% if section.settings.layout == 'right' %}
+      <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
+        <div class="featured-options discover-content">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when "icon"%}
+                {% if block.settings.options_icon == 'icon1' %}
+                  {% render 'icon-bracelet' %}
+                {% elsif block.settings.options_icon == 'icon2' %}
+                  {% render 'icon-diamond' %}
+                {% else %}
+                  {% render 'icon-candle-heart' %}
+                {% endif %}
+              {% when 'heading' %}
+                <div class="featured-title">{{ block.settings.heading }}</div>
+              {% when 'subheading' %}
+                <h3 class="featured-subheading color-text-primary">{{ block.settings.subheading }}</h3> 
+              {% when 'description' %}
+              <div class="featured-descript colors-text-secondary">
+                {{ block.settings.richtext }}
+              </div>
+              {% when 'button' %}
+                <a href="{{ block.settings.link }}" class="btn featured-btn">
+                  {{ block.settings.button }}
+                </a>
+            {% endcase %}
+          {% endfor %}        
+        </div>
+      </div>
+    {% endif %}
+    
+  </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "Image alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "Options background color",
+      "options": [
+        {
+          "value": "full",
+          "label": "Full width"
+        },
+        {
+          "value": "large",
+          "label": "Large width"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "icon",
+      "name": "Icon",
+      "limit": 3,
+      "settings":[
+        {
+          "type": "select",
+          "label": "Options Icon",
+          "id": "options_icon",
+          "options": [
+            {
+              "label": "icon 1",
+              "value": "icon1"
+            },
+            {
+              "label": "icon 2",
+              "value": "icon2"
+            },
+            {
+              "label": "icon 3",
+              "value": "icon3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "ELEGANCE"
+        }
+      ]
+    },
+    {
+      "name": "Subheading",
+      "type": "subheading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Sybheading",
+          "default": "DE CARLO means elegance"
+        }
+      ]
+    },
+    {
+      "name": "Descript",
+      "type": "description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Descript",
+          "default": "<p>exhibited thanks to the shining and refined stones that portray the contemporary era, sensual, simple and eye-catching creations that perfectly frame the female body, enhancing its natural beauty.</p>"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button",
+          "label": "Button",
+          "default": "BUY NOW"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    },
+    {
+      "name": "Choose your image",
+      "type": "image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text",
+      "blocks": [
+        {
+          "type": "icon"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "subheading"
+        },
+        {
+          "type": "description"
+        },
+        {
+          "type": "image"
+        }
+      ]
+
+    }
+  ]
+}
+{% endschema %}

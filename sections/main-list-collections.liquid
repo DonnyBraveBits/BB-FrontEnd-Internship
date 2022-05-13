@@ -1,0 +1,37 @@
+
+
+<div class="collection-list">
+  
+  <div class="grid wide">
+    <h1 class='collection-list__heading'>Collections</h1>
+    <div class="row">
+    {%- for collection in collections -%}
+        <div class="col l-4 m-3 c-6 mb-50">
+          <a href="{{ collection.url }}" class="collection-list__item ">
+            {% if collection.image %}
+              {{ collection.image | image_url: width: 500 , height:500 | image_tag }}
+            {% endif %}
+
+            <h3 class="collection-list__title dfa">
+              {{ collection.title }}
+              {% render 'icon-arrow' %}
+              
+            </h3>
+
+          </a>
+        </div>
+        
+        {%- endfor -%}
+      </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Collections list page",
+  "class": "section",
+  "settings": [
+    
+  ]
+}
+{% endschema %}

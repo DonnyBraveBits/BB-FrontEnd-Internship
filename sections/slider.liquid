@@ -1,0 +1,97 @@
+
+<div class="hero-container slider">
+  <div class="slider__wrap">
+    {% for block in section.blocks %}
+
+      {% if block.settings.image != blank %}
+
+        <div class="slider__items">
+          <img src="{{ block.settings.image | img_url: "master" }}" alt="" class="slider-img" >
+
+          <div class="slide-text grid wide1 container__small">
+            <h1 class="hero-heading heading text-color">
+              {{ block.settings.heading }}
+            </h1>
+            <div class="button">
+              <a href=" {{ block.settings.link }} " class="btn">
+                {{ block.settings.button }}
+              </a>
+            </div>
+          </div>
+        
+        </div>
+
+      {% else %}
+
+        <div class="slider__items ">
+          {{ 'lifestyle-2' | placeholder_svg_tag: 'slider-img bg-gray ' }}
+
+          <p class="placeholder-text">Slider</p>
+        </div>
+        
+      {% endif %}
+
+    {% endfor %}
+  </div>
+    
+  <button class="next-btn">
+      <i class="bi bi-chevron-right"></i>
+  </button>
+  
+  <button class="pre-btn">
+      <i class="bi bi-chevron-left"></i>
+  </button>
+    
+</div>
+
+<script src="{{ 'slider.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Slider",
+  "settings": [
+      
+      
+  ],
+  "blocks": [
+    {
+      "name": "Custom image slide",
+      "type": "image_picker",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Upload your image"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "default": "DECORAZIONI PER LE FESTE",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "button",
+          "default": "Show Now",
+          "label": "Text insite buttom"
+        }
+        ,
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }
+      ]
+    }
+  ],
+    "presets": [
+      {
+        "name": "Slider"
+          
+      }
+    ]
+}
+{% endschema %}
+
+
+        

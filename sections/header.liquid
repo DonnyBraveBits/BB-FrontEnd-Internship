@@ -1,0 +1,116 @@
+<div class="header-nav background-third container__large container-pc-low">
+    <div class="header-nav__contain wide grid">
+      {% if section.settings.logo == blank and section.settings.nameshop != blank %}
+        <a href="{{ routes.root_url }}" class="header-logo">{{ section.settings.nameshop }}</a>
+      {% elsif section.settings.logo == blank and section.settings.nameshop == blank %}  
+        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% else %}
+        <a href="{{ routes.root_url }}" class="header-logo">
+          <img class="header__logo-img" src="{{ section.settings.logo| img_url: '100x100' }}" alt="">
+        </a>
+      {% endif %}           
+
+        <ul class="header-list background-third">
+          {% for link in section.settings.menu.links %}
+            <li class="header-items">
+              <div class="header-link--wrap df">
+                <a class="header-link color-text-primary" href="{{ link.url }}">{{ link.title }}</a>
+                  {% if link.links.size > 0 %}
+                    {% render 'icon-arrow-down-black' %}
+                  {% endif %}
+              </div>
+                {% if link.links.size > 0 %}
+                  <div class="product-option background-third">
+                    <ul class="select-product__option">
+                      {% for child_link in link.links %}
+                        <li class="select-product__option-level">
+                          <a class="select-product__option-link color-text-primary" href="{{ child_link.url }}">{{ child_link.title }}</a>                                     
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+
+        <div class="product-option-1 hidden">
+          <ul class="select-product__option">
+            <li class="select-product__option-level">
+              <a href="./product.html" class="select-product__option-link">CARE OF PRODUCT</a>                                      
+            </li>
+            <li class="select-product__option-level">
+              <a href="./product_detail.html" class="select-product__option-link">PRODUCT DETAIL</a>                                      
+            </li>
+          </ul>
+        </div>
+
+        <ul class="header-func-list">
+          <li>
+            <div class="tool-search">
+              {% render 'icon-search' %}               
+              <div class="search-form">
+                <form class="nav-form" action="{{ routes.search_url }}">
+                  <input class="search-form__control" placeholder="Search product on Decarlo" type="search" name="q" value="{{ search.terms | escape }}">  
+                  <button class="search-form__btn" type="submit" value="">search</button>
+                </form>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="user-settings">
+              {%- if shop.customer_accounts_enabled -%}
+                <a href="{{ routes.account_login_url }}">
+                  {% render 'icon-user' %}
+                </a>
+              {% endif %}
+            </div>
+          </li>
+
+            <li>
+                <div class="cart-has-product">
+                  <a href="{{ routes.cart_url }}">
+                    {% render 'icon-bag' %}
+                  </a>
+                </div>
+            </li>
+            <li class="hidden-pc">
+                <i class="bi bi-list menu-icon"></i>
+                <i class="bi bi-x close-icon "></i>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+<script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'openFunctionNav.js' | asset_url }}" defer="defer"></script>
+
+
+
+{% schema %}
+{
+  "name": "Header",
+  "settings":[
+    {
+      "type": "text",
+      "label": "Type name shop",
+      "default": "Name Shop",
+      "id": "nameshop"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image logo",
+      "id": "logo"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "default": "main-menu",
+      "label": "Menu"
+    }
+  ]
+}
+{% endschema %}

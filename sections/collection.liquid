@@ -1,0 +1,66 @@
+
+<div class="category">
+  <div class="category-wrap grid wide1 container__large">
+    <h2 class="heading category-heading">{{ section.settings.heading }}</h2>
+    <div class="row">
+      {% for block in section.blocks %}
+        {%- if block.settings.collection != blank -%}
+          <div class="col l-3 m-3 c-6 mb-15">
+              <div class="category-product">
+                  <a href="{{ block.settings.collection.url }}" class="btn btn-category">
+                      {{ block.settings.collection.title }}
+                  </a>
+                  <div class="category-product__img">
+                      <img src="{{ block.settings.collection.featured_image | img_url: 'master' }}" alt="">
+                  </div>
+              </div>
+          </div>
+        {% else %}
+        <div class="col l-3 m-3 c-6 mb-15">
+          <div class="category-product category-product--placeholder">
+              <a href="./product_detail.html" class="btn btn-category btn-category-placeholder">
+                  Collection title
+              </a>
+              <div class="category-product__img category-product__img--placeholder">
+                  {{ 'collection-4' | placeholder_svg_tag: 'bg-gray ' }}
+              </div>
+          </div>
+      </div>
+        {% endif %}
+      {% endfor %} 
+    </div>
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "SHOP BY CATEGOR"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Colection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection list"
+    }
+  ]
+}
+{% endschema %}

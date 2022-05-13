@@ -1,0 +1,133 @@
+
+
+<div class="birthday grid wide2 container__large">
+  {% if section.settings.position == 'above' %}
+    <div class="history-vid">
+        
+      <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+
+      <img class="history-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+        
+        
+      {%- if section.settings.video_url.type == 'youtube' -%}
+        <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video--his" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+      {%- else -%}
+        <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo control-video--his" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+      {%- endif -%}
+    </div>
+  {% endif %}
+
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when "heading" %}
+        <h1 class="birthday-heading heading ">
+          {{ block.settings.heading }}
+        </h1>
+      {% when "description" %}
+        <div class="birthday-descript colors-text-secondary {% if section.settings.position == 'below' %} mb-30 {% endif %}">
+          {{ block.settings.richtext }}
+        </div>
+    {% endcase %}
+  {% endfor %}
+  
+  {% if section.settings.position == 'below' %}
+    <div class="history-vid">
+        
+      <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+
+      <img class="history-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+        
+        
+      {%- if section.settings.video_url.type == 'youtube' -%}
+        <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://www.youtube.com/embed/{{ section.settings.video_url.id }}?enablejsapi=1" class="js-youtube control-video--his" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+      {%- else -%}
+        <iframe sandbox="allow-forms allow-scripts allow-pointer-lock allow-same-origin allow-top-navigation allow-presentation" src="https://player.vimeo.com/video/{{ section.settings.video_url.id }}" class="js-vimeo control-video--his" allow="autoplay; encrypted-media" allowfullscreen title="{{ section.settings.description | escape }}"></iframe>
+      {%- endif -%}
+    </div>
+  {% endif %}
+
+</div>
+
+<!-- <script src="{{ 'playVideo.js' | asset_url }}" defer="defer"></script> -->
+
+
+{% schema %}
+{
+  "name": "Video with text history",
+  "settings": [
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "accept": [
+        "youtube",
+        "vimeo"
+      ],
+      "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+      "label": "URL",
+      "placeholder": "Thanh123 test",
+      "info": "Video plays in the page."
+    },
+    {
+      "type": "image_picker",
+      "id": "imagevid",
+      "label": "Cover image"
+    },
+    {
+      "type": "select",
+      "id": "position",
+      "label": "Position video",
+      "default": "above",
+      "options": [
+        {
+          "value": "above",
+          "label": "above"
+        },
+        {
+          "value": "below",
+          "label": "below"
+        }
+      ]
+    }
+    
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "BIRTH OF THE BRAND"
+        }
+      ]
+    },
+    {
+      "name": "Descript",
+      "type": "description",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "Descript",
+          "default": "<p>The DE CARLO brand was born in Florence on November 7, 2019, thanks to the passion for precious stones that Nicholas De Carlo, a Florentine entrepreneur, has cultivated since he was a child. <br> Nicholas' goal was to launch a new line of jewelry, with a modern and innovative design, able to make all women feel unique and inimitable.<br> All this was possible thanks to creations suitable for every occasion, with shapes that recall the essence of the maison: ELEGANCE, QUALITY, PASSION.</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video with text history",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "description"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

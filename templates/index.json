@@ -1,0 +1,224 @@
+{
+  "sections": {
+    "1651203086568e7a1c": {
+      "type": "slider",
+      "blocks": {
+        "5a9a43d9-588e-4b50-a4fd-7aeedbe6854b": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img-1.jpg",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "button": "Show Now",
+            "link": "shopify:\/\/collections\/all"
+          }
+        },
+        "1c6c48ca-b0fa-4309-9f61-cd94336f8f9a": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img-2.jpg",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "button": "Show Now",
+            "link": ""
+          }
+        },
+        "439d9530-0fa5-4cbf-8053-66996b1dff0e": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/slide-img-3.jpg",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "button": "Show Now",
+            "link": ""
+          }
+        },
+        "22433623-26a2-4bd7-8356-84bd33171fd9": {
+          "type": "image_picker",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/collection-inmg.jpg",
+            "heading": "DECORAZIONI PER LE FESTE",
+            "button": "Show Now",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "5a9a43d9-588e-4b50-a4fd-7aeedbe6854b",
+        "1c6c48ca-b0fa-4309-9f61-cd94336f8f9a",
+        "439d9530-0fa5-4cbf-8053-66996b1dff0e",
+        "22433623-26a2-4bd7-8356-84bd33171fd9"
+      ],
+      "settings": {
+      }
+    },
+    "16512287608aa91b17": {
+      "type": "collection",
+      "blocks": {
+        "c07fee7a-1402-4da2-8cf4-0a8a241bf65a": {
+          "type": "collection",
+          "settings": {
+            "collection": "ring"
+          }
+        },
+        "518da865-5ff9-4af2-91e0-d88dd8593f1f": {
+          "type": "collection",
+          "settings": {
+            "collection": "bracelets"
+          }
+        },
+        "143fcccc-ccd4-4e9e-adaa-007a0b8f9f43": {
+          "type": "collection",
+          "settings": {
+            "collection": "earings"
+          }
+        },
+        "993a6f8a-f98a-4ce2-9961-4166243cde50": {
+          "type": "collection",
+          "settings": {
+            "collection": "necklace"
+          }
+        }
+      },
+      "block_order": [
+        "c07fee7a-1402-4da2-8cf4-0a8a241bf65a",
+        "518da865-5ff9-4af2-91e0-d88dd8593f1f",
+        "143fcccc-ccd4-4e9e-adaa-007a0b8f9f43",
+        "993a6f8a-f98a-4ce2-9961-4166243cde50"
+      ],
+      "settings": {
+        "heading": "SHOP BY CATEGOR"
+      }
+    },
+    "165206602989029dc5": {
+      "type": "video-with-text",
+      "blocks": {
+        "16520660290c76bbbe-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "WE FOCUS ON WHAT’S REALLY IMPORTANT"
+          }
+        },
+        "16520660290c76bbbe-1": {
+          "type": "description",
+          "settings": {
+            "richtext": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et doloreLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor consecte<\/p>"
+          }
+        },
+        "16520660290c76bbbe-2": {
+          "type": "link",
+          "settings": {
+            "btn": "DISCOVER THE STORY",
+            "link": "shopify:\/\/blogs\/news"
+          }
+        }
+      },
+      "block_order": [
+        "16520660290c76bbbe-0",
+        "16520660290c76bbbe-1",
+        "16520660290c76bbbe-2"
+      ],
+      "settings": {
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "imagevid": "shopify:\/\/shop_images\/img4.jpg",
+        "layout": "left"
+      }
+    },
+    "1651586826e3fbf794": {
+      "type": "featured-product",
+      "settings": {
+        "heading": "FEATURED PRODUCT",
+        "collection": "bracelets"
+      }
+    },
+    "16520660328a021147": {
+      "type": "image-banner",
+      "blocks": {
+        "16520660322a7cc9b2-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "NEW COLLECTION 2021",
+            "optionSize": "large"
+          }
+        },
+        "16520660322a7cc9b2-1": {
+          "type": "Description",
+          "settings": {
+            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu"
+          }
+        },
+        "39b5ed20-3d56-46e3-93d1-67a9cff5c777": {
+          "type": "Link",
+          "settings": {
+            "Link": "SEE MORE",
+            "more_link": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "16520660322a7cc9b2-0",
+        "16520660322a7cc9b2-1",
+        "39b5ed20-3d56-46e3-93d1-67a9cff5c777"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/collection-inmg_2e730b63-e313-4ebb-8eca-febfa942ad0a.jpg",
+        "options": "left"
+      }
+    },
+    "165206722833dcf75f": {
+      "type": "service-shipping",
+      "blocks": {
+        "165206722850466240-0": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "165206722850466240-1": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "165206722850466240-2": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": "shopify:\/\/pages\/faq"
+          }
+        },
+        "165206722850466240-3": {
+          "type": "column",
+          "settings": {
+            "heading": "FREE SHIPPING IN ITALY",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+            "link": "SEE MORE",
+            "more_link": "shopify:\/\/pages\/faq"
+          }
+        }
+      },
+      "block_order": [
+        "165206722850466240-0",
+        "165206722850466240-1",
+        "165206722850466240-2",
+        "165206722850466240-3"
+      ],
+      "settings": {
+        "heading": "OUR SERVICES"
+      }
+    }
+  },
+  "order": [
+    "1651203086568e7a1c",
+    "16512287608aa91b17",
+    "165206602989029dc5",
+    "1651586826e3fbf794",
+    "16520660328a021147",
+    "165206722833dcf75f"
+  ]
+}

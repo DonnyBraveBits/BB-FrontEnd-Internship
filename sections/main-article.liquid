@@ -1,0 +1,52 @@
+
+
+<div class="blog__post container">
+  {%- for block in section.blocks -%}
+    {%- case block.type -%}
+      {%- when 'image_picker' -%}
+        <div class="blog__post-img">
+          <img src="{{ article.image | img_url: 'master' }}"/>
+        </div>
+      {%- when 'title' -%}
+        <div class="blog__post-title">
+          <h2>{{ article.title }}</h2>
+        </div>
+      {%- when 'content' -%}
+        <div class="blog__post-content">
+          <div>{{ article.content }}</div>
+        </div>
+    {%- endcase -%}
+  {%- endfor -%}
+
+  <div class="blog__post-back">
+    <a href="{{ blog.url }}">
+      {% render 'icon-arrow' %}
+      <span>Back to blog</span>
+    </a>
+  </div>
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Blog Post",
+  "blocks": [
+    {
+      "type": "image_picker",
+      "name": "Image",
+      "limit": 1
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1
+    },
+    {
+      "type": "content",
+      "name": "Content",
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}

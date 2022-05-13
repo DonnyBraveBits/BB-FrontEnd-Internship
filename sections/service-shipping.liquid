@@ -1,0 +1,91 @@
+<div class="service background_secondary">
+  <div class="service-wrap grid wide1 container__large">
+    <h2 class="heading category-heading service-heading">{{ section.settings.heading }}</h2>
+    <div class="row">
+      {% for block in section.blocks %}
+        <div class="col l-3 m-6 c-12 mb-20-mb-tab">
+          <div class="service-box background-third">
+            {% render 'icon-box' %}
+            <h3 class="heading service-title {% if block.settings.heading == blank %} hidden {% endif %}">
+              {{ block.settings.heading }}
+            </h3>
+            <p class="service-descript {% if block.settings.description == blank %} hidden {% endif %} ">
+              {{ block.settings.description }}
+            </p>
+            <a href="{{ block.settings.more_link }}" class="collection-more service-more">
+              {{ block.settings.link }}
+              {% if block.settings.link != blank %}
+                {% render 'icon-arrow-right-black' %}
+              {% endif %}
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Service shipping",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "OUR SERVICES"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Column",
+      "type": "column",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading",
+          "default": "FREE SHIPPING IN ITALY"
+        },
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "description",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+        },
+        {
+          "type": "text",
+          "label": "Direction",
+          "id": "link",
+          "default": "SEE MORE"
+        },
+        {
+          "type": "url",
+          "id": "more_link",
+          "label": "Link"
+        }
+      ]      
+    }
+  ],
+  "presets": [
+    {
+      "name": "Service shipping",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
