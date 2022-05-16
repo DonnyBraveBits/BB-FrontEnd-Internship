@@ -6,20 +6,43 @@
         <div class="header-above__contain wide-header-above grid">
           <span></span>
           <div class="heading-header text-color">
-            {{ block.settings.text  }}
+            {{ block.settings.text }}
           </div>
-          <div class="language">
-            <select class="laguage-select text-color background-primary">
-              <option selected>Italian</option>
-              <option >English</option>
-              <option >Vietnamese</option>
-              <option >Thailand</option>
-            </select>
+
+         
+
+
+          {% form 'localization' %}
+          <div class="language df">
+            <select name="language_code" class="laguage-select text-color background-primary">
+              {% for language in localization.available_languages %}
+                <option value="{{ language.iso_code }}"
+                  {%- if language == localization.language %} selected="selected"{% endif %}>
+                  {{ language.endonym_name }}             
+                </option>
+              {% endfor %}
+            </select>         
+
+            <input hidden type="submit" value="Update" class="background-primary text-color localization__input">
           </div>
+          {% endform %}
+
         </div>
       </div>
   {% endcase %}
 {% endfor %}
+
+<script>
+  let optionsLanguage = document.querySelector('.laguage-select');
+
+  let inputSubmit = document.querySelector('input[type="submit"]');
+  
+  optionsLanguage.onchange = function() {
+
+    inputSubmit.click();
+  }
+</script>
+
     
 
 {% schema %}

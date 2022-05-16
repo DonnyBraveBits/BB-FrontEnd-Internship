@@ -94,7 +94,7 @@
     </div>
 
     <div class="form-login">
-      <h1 id="login">Login</h1>
+      <h1 id="login">{{ 'user.login.header' | t }}</h1>
       {%- if recover_success == true -%}
         <h3 class="text-success">We've sent you an email with a link to update your password</h3>
       {%- endif -%}  
@@ -105,20 +105,20 @@
         {%- endif -%}
 
         <div class="login-form">
-          <input type="email" name="customer[email]" id="CustomerEmail" placeholder="Email">     
+          <input type="email" name="customer[email]" id="CustomerEmail" placeholder="{{ 'user.placeholder.email' | t }}">     
         </div>
 
         {%- if form.password_needed -%}
           <div class="login-form">
-            <input type="password" name="customer[password]" id="CustomerPassword" placeholder="Password">                 
+            <input type="password" name="customer[password]" id="CustomerPassword" placeholder="{{ 'user.placeholder.password' | t }}">                 
           </div>
 
-          <a href="#recover" class="login-forgot db">Forgot your password?</a>
+          <a href="#recover" class="login-forgot db">{{ 'user.interactive.forgot' | t }}</a>
         {%- endif -%}
 
-        <button class="btn">Sign in</button>
+        <button class="btn">{{ 'user.interactive.login' | t }}</button>
 
-        <a href="{{ routes.account_register_url }}" class="creat-account db">Creat account</a>        
+        <a href="{{ routes.account_register_url }}" class="creat-account db">{{ 'user.interactive.account' | t }}</a>        
       {%- endform -%}
     </div>
 </div>

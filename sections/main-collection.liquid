@@ -65,7 +65,7 @@
                 <i class="bi bi-suit-heart feature-icon "></i>
                 <i class="bi bi-suit-heart-fill feature-icon--active "></i>
                 <div class="category-product__img feature-img">
-                  <img src="{{ product.featured_image | image_url: width: 300 }}">
+                  <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}">
                 </div>
                 <div class="product-name">
                   <a href="{{ product.url }}" class="">

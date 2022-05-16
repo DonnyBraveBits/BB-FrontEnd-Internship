@@ -1,9 +1,9 @@
 <div class="collection">
   <div class="collection-wrap">
     <div class="collection-img">
-      {%- if section.settings.image != blank -%}
-        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.image | image_url: width: 1720, height: 1720 }}"/>
-      {%- elsif section.settings.image == blank -%}
+      {%- if collection.image != blank -%}
+        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ collection.image | image_url: width: 720, height: 720 }}"/>
+      {%- elsif collection.image == blank -%}
         {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
       {%- endif -%}
     </div>
@@ -12,13 +12,13 @@
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'heading' %}
-            <h2 class="heading collection-heading text-color {{ block.settings.optionSize }}">
-              {{ block.settings.heading }}
+            <h2 class="heading collection-heading {{ block.settings.optionSize }} {{ block.settings.optionColor }}">
+              {{ collection.title }}
             </h2>
           {% when 'Description' %}
-            <p class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %}">
-              {{ block.settings.Description }}
-            </p>
+            <div class="collection-text {% if section.settings.options == 'center' %} width-unset {% endif %} {{ block.settings.optionColor }}">
+              {{ collection.description }}
+            </div>
           {% when 'Link' %}
             <a href="{{ block.settings.more_link }}" class="collection-more text-color">
               {{ block.settings.Link }}
@@ -39,13 +39,8 @@
 
 {% schema %}
 {
-  "name": "Image Banner",
+  "name": "Image Collection",
   "settings": [
-    {
-      "type": "image_picker",
-      "label": "Image",
-      "id": "image"
-    },
     {
       "type": "select",
       "label": "Options content",
@@ -68,12 +63,6 @@
       "type": "heading",
       "settings": [
         {
-          "type": "text",
-          "label": "Heading",
-          "id": "heading",
-          "default": "NEW COLLECTION 2021"  
-        },
-        {
           "type": "select",
           "label": "Options size heading",
           "id": "optionSize",
@@ -91,6 +80,21 @@
               "value": "small"
             }
           ]
+        },
+        {
+          "type": "select",
+          "label": "Options color heading",
+          "id": "optionColor",
+          "options": [
+            {
+              "label": "Dark color",
+              "value": "dark"
+            },
+            {
+              "label": "Light color",
+              "value": "light"
+            }
+          ]
         }
       ]
     },
@@ -99,10 +103,19 @@
       "type": "Description",
       "settings": [
         {
-          "type": "text",
-          "label": "Description",
-          "id": "Description",
-          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu" 
+          "type": "select",
+          "label": "Options color description",
+          "id": "optionColor",
+          "options": [
+            {
+              "label": "Dark color",
+              "value": "dark"
+            },
+            {
+              "label": "Light color",
+              "value": "light"
+            }
+          ]
         }
       ]
     },
@@ -143,7 +156,7 @@
   ],
   "presets": [
     {
-      "name": "Image Banner",
+      "name": "Image Collection",
       "blocks": [
         {
           "type": "heading"

@@ -9,13 +9,15 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon"%}
-                {% if block.settings.options_icon == 'icon1' %}
-                  {% render 'icon-bracelet' %}
-                {% elsif block.settings.options_icon == 'icon2' %}
-                  {% render 'icon-diamond' %}
-                {% else %}
-                  {% render 'icon-candle-heart' %}
-                {% endif %}
+                {%- liquid
+                  if block.settings.options_icon == 'icon1'
+                    render 'icon-bracelet'
+                  elsif block.settings.options_icon == 'icon2' 
+                    render 'icon-diamond'
+                  else 
+                    render 'icon-candle-heart'
+                  endif
+                -%}
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}
@@ -39,7 +41,7 @@
         {% case block.type %}
         {% when 'image' %}
             {%- if block.settings.image != blank -%}
-              <img class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | img_url: "master" }}" alt="">
+              <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="featured-img {% if section.settings.width == 'large' %} featured-img-mw {% endif %}" src="{{ block.settings.image | image_url: width: 720, height: 720 }}" alt="">
             {%- else -%}
               {{ 'collection-1' | placeholder_svg_tag: 'featured-img bg-gray ' }}
             {%- endif -%} 
@@ -49,17 +51,19 @@
 
     {% if section.settings.layout == 'right' %}
       <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
-        <div class="featured-options discover-content">
+        <div class="featured-options discover-content pl-0">
           {% for block in section.blocks %}
             {% case block.type %}
-              {% when "icon"%}
-                {% if block.settings.options_icon == 'icon1' %}
-                  {% render 'icon-bracelet' %}
-                {% elsif block.settings.options_icon == 'icon2' %}
-                  {% render 'icon-diamond' %}
-                {% else %}
-                  {% render 'icon-candle-heart' %}
-                {% endif %}
+              {% when "icon" %}
+                {%- liquid
+                  if block.settings.options_icon == 'icon1'
+                    render 'icon-bracelet'
+                  elsif block.settings.options_icon == 'icon2' 
+                    render 'icon-diamond'
+                  else 
+                    render 'icon-candle-heart'
+                  endif
+                -%}
               {% when 'heading' %}
                 <div class="featured-title">{{ block.settings.heading }}</div>
               {% when 'subheading' %}
@@ -81,6 +85,8 @@
   </div>
   </div>
 </div>
+
+<script src="{{ 'addPaddingImageWidthText.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {

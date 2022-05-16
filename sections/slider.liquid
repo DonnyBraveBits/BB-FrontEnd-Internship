@@ -6,7 +6,7 @@
       {% if block.settings.image != blank %}
 
         <div class="slider__items">
-          <img src="{{ block.settings.image | img_url: "master" }}" alt="" class="slider-img" >
+          <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.image | image_url: width: 1720, height: 1720 }}" alt="" class="slider-img" >
 
           <div class="slide-text grid wide1 container__small">
             <h1 class="hero-heading heading text-color">

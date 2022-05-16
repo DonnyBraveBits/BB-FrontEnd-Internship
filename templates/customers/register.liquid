@@ -35,7 +35,7 @@
 </style>
 
 <div class="page-login">
-    <h1>Create account</h1>
+    <h1>{{ 'user.interactive.account' | t }}</h1>
 
     {% form 'create_customer' %}
       {% if form.errors %}
@@ -43,12 +43,12 @@
       {% endif %}
 
       <div class="login-form df">
-          <input type="text" placeholder="Fisrt name" name="customer[first_name]" id="RegisterForm-FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
-          <input type="text" placeholder="Last name" name="customer[last_name]" id="RegisterForm-LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
-          <input type="email" placeholder="Email" name="customer[email]" id="RegisterForm-email" {% if form.email %}value="{{ form.email }}"{% endif %}>
-          <input type="password" placeholder="Password" name="customer[password]" id="RegisterForm-password" {% if form.password %}value="{{ form.password }}"{% endif %}>
+          <input type="text" placeholder="{{ 'user.name.first_name' | t }}" name="customer[first_name]" id="RegisterForm-FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %}>
+          <input type="text" placeholder="{{ 'user.name.last_name' | t }}" name="customer[last_name]" id="RegisterForm-LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+          <input type="email" placeholder="{{ 'user.placeholder.email' | t }}" name="customer[email]" id="RegisterForm-email" {% if form.email %}value="{{ form.email }}"{% endif %}>
+          <input type="password" placeholder="{{ 'user.placeholder.password' | t }}" name="customer[password]" id="RegisterForm-password" {% if form.password %}value="{{ form.password }}"{% endif %}>
           <button class="btn login__form--btn">
-            Create
+            {{ 'user.interactive.account' | t }}
           </button> 
       </div>
     {% endform %}

@@ -1,27 +1,25 @@
 {
   "sections": {
-    "image-banner": {
-      "type": "image-banner",
+    "1652429266dd29fc06": {
+      "type": "image-collection",
       "blocks": {
-        "dbfef438-fa51-4bac-bbcc-84c60b1b5a88": {
+        "1652429266c6e6cead-0": {
           "type": "heading",
           "settings": {
-            "heading": "NEW COLLECTION 2021"
+            "optionSize": "large"
           }
         },
-        "058183b9-4fa3-42e2-a7f9-ba67c0ed4a79": {
+        "1652429266c6e6cead-1": {
           "type": "Description",
           "settings": {
-            "Description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididu"
           }
         }
       },
       "block_order": [
-        "dbfef438-fa51-4bac-bbcc-84c60b1b5a88",
-        "058183b9-4fa3-42e2-a7f9-ba67c0ed4a79"
+        "1652429266c6e6cead-0",
+        "1652429266c6e6cead-1"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/slide-img-2_4ce34cce-aed2-43fb-abf4-800abedc10a0.jpg",
         "options": "left"
       }
     },
@@ -32,7 +30,7 @@
     }
   },
   "order": [
-    "image-banner",
+    "1652429266dd29fc06",
     "main"
   ]
 }

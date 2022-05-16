@@ -11,7 +11,7 @@
                 {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
               {% else %}
                 <a href="{{ routes.root_url }}">
-                  <img src="{{ block.settings.logo| img_url: 'large' }}" alt="">
+                  <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.logo | image_url: width: 720, height: 720 }}" alt="">
                 </a>
               {% endif %}
             </div>
@@ -66,12 +66,24 @@
                 {{ block.settings.heading }}
               </div>
 
-                <form action="">
+                <form action="" class="hidden">
                     <div class="form-email">
                         <input required type="email" name="" class="colors-text-secondary" id="inputEmail" placeholder="Your Email">
                         <button class="text-color">Subscribe</button>
                     </div>
                 </form>
+
+                {% form 'customer' %}
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <div class="form-email">
+                    <input required type="email" name="contact[email]" value="{{ form.email }}" aria-describedby="ContactFooter-success" class="colors-text-secondary" id="inputEmail" placeholder="Your Email">
+                    <button type="submit" class="text-color">Subscribe</button>
+                  </div>
+                  {%- if form.posted_successfully? -%}
+                    <h3 class="subscribe__success">Thanks for subscribing !!!</h3>
+                  {%- endif -%}
+                {% endform %}
+
                 <div class="footer-social text-color">
                     SOCIAL
                 </div>
@@ -111,7 +123,6 @@
                 
             </div>
         </div>
-
           {% when "creat" %}
             <p class="footer-ifo colors-text-secondary">
                 {{ block.settings.description }}

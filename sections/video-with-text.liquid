@@ -6,9 +6,9 @@
         <div class="col l-6 m-6 c-12">
           <div class="discover-vid">
             
-            <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+            <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="">
 
-            <img class="discover-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+            <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-play {% if section.settings.imagevid == blank %} hidden {% endif %}" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
 
             
             {%- if section.settings.video_url.type == 'youtube' -%}
@@ -51,9 +51,9 @@
         <div class="col l-6 m-6 c-12">
           <div class="discover-vid">
             
-            <img class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | img_url: "master" }}" alt="">
+            <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-img {% if section.settings.imagevid == blank %} discover-img--level {% endif %}" src="{{ section.settings.imagevid | image_url: width: 720, height: 720 }}" alt="">
 
-            <img class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
+            <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="discover-play" src="https://thanh991999.github.io/Decaclo_figma/assets/icon/play.svg" alt="">
 
             
             {%- if section.settings.video_url.type == 'youtube' -%}

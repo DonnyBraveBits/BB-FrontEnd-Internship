@@ -9,7 +9,7 @@
         <li class="blogs__items">
           <div class="article">
             <a href="{{ article.url }}" class="article__image">
-              <img src="{{ article.image | img_url: "master" }}" alt="" class="article__image">
+              <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ article.image | image_url: width: 720, height: 720 }}" alt="" class="article__image">
             </a>
             <a href="{{ article.url }}" class="article__heading">{{ article.title }}</a>
             <span class="article__created-at">

@@ -18,15 +18,17 @@
               {% when 'column' %}
                 <div class="col l-3 c-12 mb-20">
                   <div class="service-box contact-box">
-                    {% if block.settings.options_icon == 'email' %}
-                      {% render 'icon-email' %}
-                    {% elsif block.settings.options_icon == 'Phone-around' %}
-                      {% render 'icon-phone-around' %}
-                    {% elsif block.settings.options_icon == 'Phone' %}
-                      {% render 'icon-phone' %}
-                    {% else %}
-                      {% render 'icon-chat' %}
-                    {% endif %}
+                    {%- liquid
+                      if block.settings.options_icon == 'email'
+                        render 'icon-email'
+                      elsif block.settings.options_icon == 'Phone-around' 
+                        render 'icon-phone-around'
+                      elsif block.settings.options_icon == 'Phone' 
+                        render 'icon-phone'
+                      else 
+                        render 'icon-chat'
+                      endif
+                    -%}
                     <h3 class="product-title contact-title ">
                       {{ block.settings.description }}
                     </h3>

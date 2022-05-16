@@ -1,3 +1,4 @@
+
 <div class="header-nav background-third container__large container-pc-low">
     <div class="header-nav__contain wide grid">
       {% if section.settings.logo == blank and section.settings.nameshop != blank %}
@@ -6,7 +7,7 @@
         {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
       {% else %}
         <a href="{{ routes.root_url }}" class="header-logo">
-          <img class="header__logo-img" src="{{ section.settings.logo| img_url: '100x100' }}" alt="">
+          <img 	width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="header__logo-img" src="{{ section.settings.logo | image_url: width: 100, height: 100 }}" alt="">
         </a>
       {% endif %}           
 
@@ -73,6 +74,9 @@
                   <a href="{{ routes.cart_url }}">
                     {% render 'icon-bag' %}
                   </a>
+                  <div class="cart__number df">
+                    {{ cart.item_count }}
+                  </div>
                 </div>
             </li>
             <li class="hidden-pc">
@@ -84,6 +88,8 @@
 </div>
 
 <div class="overlay"></div>
+
+
 
 <script src="{{ 'main.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'openFunctionNav.js' | asset_url }}" defer="defer"></script>

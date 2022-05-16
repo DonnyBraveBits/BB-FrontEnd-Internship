@@ -1,0 +1,20 @@
+{
+  "user": {
+    "login": {
+      "header": "ログイン"
+    },
+    "placeholder": {
+      "email": "電子メール",
+      "password": "パスワード"
+    },
+    "interactive": {
+      "forgot": "パスワードをお忘れですか",
+      "login": "サインイン",
+      "account": "アカウントを作成する"
+    },
+    "name": {
+      "first_name": "ファーストネーム",
+      "last_name": "苗字"
+    }
+  }
+}

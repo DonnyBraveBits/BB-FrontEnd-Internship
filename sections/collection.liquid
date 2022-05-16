@@ -8,10 +8,11 @@
           <div class="col l-3 m-3 c-6 mb-15">
               <div class="category-product">
                   <a href="{{ block.settings.collection.url }}" class="btn btn-category">
-                      {{ block.settings.collection.title }}
+                    {{ block.settings.collection.title }}
+                      
                   </a>
                   <div class="category-product__img">
-                      <img src="{{ block.settings.collection.featured_image | img_url: 'master' }}" alt="">
+                    <img 	width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.collection.featured_image | image_url: width: 720, height: 720 }}" alt="">
                   </div>
               </div>
           </div>
@@ -19,7 +20,8 @@
         <div class="col l-3 m-3 c-6 mb-15">
           <div class="category-product category-product--placeholder">
               <a href="./product_detail.html" class="btn btn-category btn-category-placeholder">
-                  Collection title
+                  
+                Collection title
               </a>
               <div class="category-product__img category-product__img--placeholder">
                   {{ 'collection-4' | placeholder_svg_tag: 'bg-gray ' }}

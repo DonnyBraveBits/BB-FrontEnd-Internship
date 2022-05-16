@@ -1,0 +1,20 @@
+{
+  "user": {
+    "login": {
+      "header": "登录"
+    },
+    "placeholder": {
+      "email": "电子邮件",
+      "password": "密码"
+    },
+    "interactive": {
+      "forgot": "忘记密码了吗",
+      "login": "登入",
+      "account": "创建帐号"
+    },
+    "name": {
+      "first_name": "名",
+      "last_name": "姓"
+    }
+  }
+}

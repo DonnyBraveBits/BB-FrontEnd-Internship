@@ -54,9 +54,9 @@
 
                 <div class="col c-6 m-6 c-12">
                   {% if block.settings.img != blank %}
-                  <img class="service-img" src="{{ block.settings.img | img_url: "master" }}" alt="">
+                    <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="service-img" src="{{ block.settings.img | image_url: width: 720, height: 720 }}" alt="">
                   {% else %}
-                  {{ 'collection-1' | placeholder_svg_tag: 'service-img bg-gray ' }}
+                    {{ 'collection-1' | placeholder_svg_tag: 'service-img bg-gray ' }}
                   {% endif %}
                 </div>
             </div>
@@ -79,7 +79,7 @@
                 </div>
                 <div class="col c-6 m-6 c-12">
                   {% if block.settings.img != blank %}
-                    <img class="service-img" src="{{ block.settings.img | img_url: "master" }}" alt="">
+                    <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="service-img" src="{{ block.settings.img | image_url: width: 720, height: 720 }}" alt="">
                   {% else %}
                     {{ 'collection-1' | placeholder_svg_tag: 'service-img bg-gray ' }}
                   {% endif %}
@@ -105,7 +105,7 @@
 
                 <div class="col c-6 m-6 c-12">
                   {% if block.settings.img != blank %}
-                    <img class="service-img" src="{{ block.settings.img | img_url: "master" }}" alt="">
+                    <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="service-img" src="{{ block.settings.img | image_url: width: 720, height: 720 }}" alt="">
                   {% else %}
                     {{ 'collection-1' | placeholder_svg_tag: 'service-img bg-gray ' }}
                   {% endif %}

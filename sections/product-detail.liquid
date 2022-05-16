@@ -9,7 +9,12 @@
         <i class="bi bi-dot detail-text__icon" ></i>
       </p>
       <p class="detail-text df">
-        <span> RING </span>
+        
+        {% if  product.collections[1].title %}
+          <span> {{ product.collections[1].title }} </span>
+        {% else %}
+          <span> {{ product.collections[0].title }} </span>
+        {% endif %}
         <i class="bi bi-dot detail-text__icon"></i>
 
       </p>
@@ -27,7 +32,7 @@
                 <div class="detail-show__main">
                   <div class="detail-show__main-slide">
                     {% for image in product.images %}
-                      <img class="detail-show__main-img" src="{{ image| product_img_url: 'master' }}" alt="img1">
+                      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="detail-show__main-img" src="{{ image | image_url: width: 720, height: 720 }}" alt="img1">
                     {% endfor %}
                   </div>
                 </div>
@@ -39,7 +44,7 @@
                 {% for image in product.images %}
                   <div class="col l-3 m-3 c-3 ">
                     <div class="detail-show__items active">
-                      <img class="detail-show__main-img" src="{{ image| product_img_url: 'master' }}" alt="img1">
+                      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="detail-show__main-img" src="{{ image | image_url: width: 720, height: 720 }}" alt="img1">
                     </div>
                   </div>
                 {% endfor %}
@@ -131,10 +136,10 @@
                   <h3 class="detail-heading__gift">
                     OUR GIFT BOX EXCLUSIVELY FOR YOU
                   </h3>
-                  {% if block.settings.image_picker != bank %}
-                    <img class="detail-heading__gift-img" src="{{ block.settings.image_picker | product_img_url: 'master' }}" alt="">
+                  {% if block.settings.image_picker != blank %}
+                    <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="detail-heading__gift-img" src="{{ block.settings.image_picker | image_url: width: 720, height: 720 }}" alt="">
                   {% else %}
-                    {{ 'image' | placeholder_svg_tag: "detail-heading__gift-img"}}
+                    {{ 'image' | placeholder_svg_tag: "detail-heading__gift-img" }}
                   {% endif %}
               {%- endcase -%}
             {%- endfor -%}
