@@ -27,7 +27,7 @@
         "16520615046ece331d-1"
       ],
       "settings": {
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=kk-1bEP-7CA&t=1s",
         "imagevid": "shopify:\/\/shop_images\/img1.jpg",
         "position": "above"
       }
@@ -90,19 +90,19 @@
         "1652061621f342caf5-1": {
           "type": "heading",
           "settings": {
-            "heading": "ELEGANCE"
+            "heading": "QUALITY"
           }
         },
         "1652061621f342caf5-2": {
           "type": "subheading",
           "settings": {
-            "subheading": "DE CARLO means elegance"
+            "subheading": "DE CARLO means quality:"
           }
         },
         "1652061621f342caf5-3": {
           "type": "description",
           "settings": {
-            "richtext": "<p>exhibited thanks to the shining and refined stones that portray the contemporary era, sensual, simple and eye-catching creations that perfectly frame the female body, enhancing its natural beauty.<\/p>"
+            "richtext": "<p>thanks to the mastery of craftsmen with over 25 years of experience in the goldsmith sector and a careful refinement of raw materials, to the shiny plating, to the vast chromatic range of the stones used.<\/p>"
           }
         },
         "1652061621f342caf5-4": {
@@ -136,19 +136,19 @@
         "16520616267dc415ad-1": {
           "type": "heading",
           "settings": {
-            "heading": "ELEGANCE"
+            "heading": "PASSION"
           }
         },
         "16520616267dc415ad-2": {
           "type": "subheading",
           "settings": {
-            "subheading": "DE CARLO means elegance"
+            "subheading": "DE CARLO means passion:"
           }
         },
         "16520616267dc415ad-3": {
           "type": "description",
           "settings": {
-            "richtext": "<p>exhibited thanks to the shining and refined stones that portray the contemporary era, sensual, simple and eye-catching creations that perfectly frame the female body, enhancing its natural beauty.<\/p>"
+            "richtext": "<p>The gift for the anniversary, for an important day or simply to celebrate everyday life ... a whirlwind of emotions, feelings and memories that will make the jewel, the extra element that can leave a little big sign. <\/p>"
           }
         },
         "16520616267dc415ad-4": {
@@ -190,7 +190,7 @@
           "type": "Button",
           "settings": {
             "Button": "BACK TO SHOPPING NOW",
-            "Botton_url": "shopify:\/\/pages\/history"
+            "Botton_url": "shopify:\/\/collections\/all"
           }
         }
       },

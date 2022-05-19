@@ -1,6 +1,5 @@
 
 
-
 <div class="detail-container ">
   <div class="container__large grid wide1">
     <div class="detail-folder">
@@ -44,7 +43,7 @@
                 {% for image in product.images %}
                   <div class="col l-3 m-3 c-3 ">
                     <div class="detail-show__items active">
-                      <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" class="detail-show__main-img" src="{{ image | image_url: width: 720, height: 720 }}" alt="img1">
+                      <img width="100" height="100" loading="lazy" class="detail-show__main-img" src="{{ image | image_url: width: 720, height: 720 }}" alt="img1">
                     </div>
                   </div>
                 {% endfor %}
@@ -69,58 +68,60 @@
                 {%- when 'price' -%}
                   <span class="detail-info__cost mt-20"> {{ product.price_max | money }}</span>
 
-                <form method="post" action="/cart/add">
-
-                  {%- when 'select' -%}
-                    {% for product_option in product.options_with_values %}
-                    <div class="product-select {% if product_option.name == 'Title' %} hidden {% endif %}">
-                        <label>
-                          <div class="detail-info__size mb-20">
-                            <span>{{ product_option.name }}</span>
-                            <div class="detail-info__size-icon df">
-                              {% render 'icon-ruler' %}
-                              <span>Find your {{ product_option.name }}</span>
-                            </div>
+                {%- when 'select' -%}
+                  {% for product_option in product.options_with_values %}
+                  <div class="product-select {% if product_option.name == 'Title' %} hidden {% endif %}">
+                      <label>
+                        <div class="detail-info__size mb-20">
+                          <span>{{ product_option.name }}</span>
+                          <div class="detail-info__size-icon df">
+                            {% render 'icon-ruler' %}
+                            <span>Find your {{ product_option.name }}</span>
                           </div>
+                        </div>
 
-                          <div class="select">
-                            <select class="form-chose__size">
-                              {% for value in product_option.values %}
-                                <option {% if product_option.selected_value == value %}selected{% endif %}>
-                                  {{ value }} 
-                                </option> 
-                              {% endfor %}
-                            </select>
-                          </div>
-                        </label>
-                    </div>
-                  {% endfor %}
+                        <div class="select">
+                          <select class="form-chose__size">
+                            {% for value in product_option.values %}
+                              <option {% if product_option.selected_value == value %}selected{% endif %}>
+                                {{ value }} 
+                              </option> 
+                            {% endfor %}
+                          </select>
+                        </div>
+                      </label>
+                  </div>
+                {% endfor %}
                     
                   {%- when 'buynow' -%}
-                    <div class="form-option">
-                      <div class="option-amount ">
+
+                  <form method="post" action="/cart/add">
+
+                      <div class="form-option">
+                        <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+
+                        <div class="option-amount ">
                           <i class="bi bi-dash dash-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepDown()"></i>
-                          <input class="product__quantity-input" min="1" type="number"  value="1"> 
+                          <input class="product__quantity-input" min="1" type="number"  value="1" name="quantity"> 
                           <i class="bi bi-plus plus-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepUp()" ></i>
-                      </div>
+                        </div>
 
-                      <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
-                   
-                      <button class="option-add-cart btn " name="add"  type="submit">ADD TO CART</button>
-                      
-
-                      <div class="option-like">
-                          <i class="bi bi-suit-heart option-like__icon active"></i>
-                          <i class="bi bi-suit-heart-fill option-like__icon-fill"></i>
-                      </div>
+                        <button class="option-add-cart btn " name="add"  type="submit">ADD TO CART</button>
+                        
+                        <div class="option-like">
+                            <i class="bi bi-suit-heart option-like__icon active"></i>
+                            <i class="bi bi-suit-heart-fill option-like__icon-fill"></i>
+                        </div>
                     </div>
+                    
+                  </form>
 
-                    
-                     
-                    <button class="btn btn-buy-now background-primary" >  BUY NOW </button>
-                    
-                </form>
-                  
+                  <form action="{{ routes.cart_url }}" method="post" id="cart">
+                    <button type="submit" id="checkout" class="btn btn-buy-now background-primary" name="checkout">
+                      BUY NOW
+                    </button>
+                  </form>
+
                 {%- when 'review' -%} 
                   <p class="detail-comment">
                     GET THIS PRODUCT BY 1ST APR !
@@ -128,9 +129,9 @@
                   <div id="shopify-product-reviews" data-id="{{ product.id }}">{{ product.metafields.spr.reviews }}</div>
 
                 {%- when 'descript' -%}
-                  <p class="detail-descript">
+                  <div class="detail-descript colors-text-secondary">
                     {{ product.description }}
-                  </p>
+                  </div>
                 
                 {%- when 'gift' -%}
                   <h3 class="detail-heading__gift">
@@ -157,6 +158,9 @@
 {
   "name": "Product-detail",
   "blocks": [
+    {
+      "type": "@app"
+    },
     {
       "type": "title",
       "name": "Title"

@@ -18,6 +18,14 @@
         margin-top: 30px;
     }
 
+    .history-vid {
+      min-height: 175px;
+    }
+
+    .history-play {
+      width: 30px;
+    }
+
 }
 
 /* tablet */
@@ -74,9 +82,20 @@
     }
 }
 
+@media (max-width: 1110px) {
+  .oder-tab-mb-2 {
+    order: 2;
+  }
+
+  .oder-tab-mb-1 {
+      order: 1;
+  }
+
+  
+}
+
 @media (min-width: 1024px) and (max-width: 1362px) {
     
-
     .feature {
         padding-top: 40px;
     }

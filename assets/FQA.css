@@ -26,7 +26,7 @@
     line-height: 3.4rem;
     letter-spacing: var(--letter-spacing);
     font-weight: 600;
-    color: var(--text-color-secondary);
+    color: #84848E;
 }
 
 .fqa-menu__link.fqa-menu__link--active {

@@ -1,5 +1,27 @@
 
 @media (max-width: 767px) {
+    .detail-container {
+      padding-top: 42px;
+    }
+
+    .detail-wraper {
+      padding-top: 42px;
+    }
+
+    .detail-info__name {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
+    .detail-info__size {
+      margin-top: 32px;
+    }
+
+    .detail-info__cost {
+      font-size: 2rem;
+      line-height: 3rem;
+    }
+
     .detail-product__info-img {
         margin-left: 0;
         width: 100%;
@@ -32,8 +54,8 @@
     .detail-next-btn::after {
         width: 25px;
         height: 25px;
-        top: 10px;
-        left: 2px;
+        top: 9px;
+        left: 3px;
     }
 
     .detail-next-btn,
@@ -50,10 +72,11 @@
     }
     .form-option {
         flex-wrap: wrap;
+        margin-top: 30px;
     }
     .option-amount {
         flex: 1 0 100%;
-        margin-bottom: 20px;
+        margin-bottom: 15px;
     }
 
     .mb-20 {
@@ -68,6 +91,14 @@
     .menu-directional__item {
         padding-top: 10px;
         padding-bottom: 10px;
+    }
+
+    .service-img {
+        margin-top: 40px;
+    }
+
+    .detail-show__main-img{
+        height: 100px;
     }
 }
 /* tablet */

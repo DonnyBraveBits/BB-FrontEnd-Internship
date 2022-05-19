@@ -6,10 +6,10 @@
       </h2>
     </div>
     <div class="collection__options df">
-      <div class="collection__options-item">
-        <span>There are {{ collection.all_products_count }} products</span>
-      </div>
-      <div class="collection__options-item df">
+      <div class="collection__options-wrap df">
+        <div class="collection__options-item">
+          <span>There are {{ collection.all_products_count }} products</span>
+        </div>
         <div class="collection__sort df df__center">
           <span>SORT BY :</span>
           <select id="sort-by" class="collection__select">
@@ -21,39 +21,153 @@
               {% endfor %}
           </select>
         </div>
-          <p>FILTER</p>
       </div>
+      <div class="collection__options-filter collection__options-item df">
+        <button>FILTER: </button>
+        <form class="filter-form">
+          {%- for filter in collection.filters -%}
+            <details class="filter-group">
+              <summary class="filter-group-summary">
+                <div>
+                  <span>{{ filter.label }}</span>
+                  {% render 'icon-arrow-down-black' %}
+        
+                  {%- if filter.active_values.size > 0 -%}
+                    <span>({{ filter.active_values.size }})</span>
+                  {%- endif -%}
+                </div>
+              </summary>
+        
+              <div class="filter-group-display">
+                <div class="filter-group-display__header">
+                  <span class="filter-group-display__header-selected">{{ filter.active_values.size }} selected</span>
+        
+                  {%- if filter.active_values.size > 0 -%}
+                    <a href="{{ filter.url_to_remove }}" class="filter-group-display__header-reset">Reset</a>
+                  {%- endif -%}
+                </div>
+        
+                {%- case filter.type -%}
+                  {%- when 'boolean' or 'list' -%}
+                    <ul class="filter-group-display__list">
+                      {%- for filter_value in filter.values -%}
+                        <li class="filter-group-display__list-item">
+                          <label for="Filter-{{ filter.param_name }}-{{ forloop.index }}">
+                          <input type="checkbox"
+                            name="{{ filter_value.param_name }}"
+                            value="{{ filter_value.value }}"
+                            id="Filter-{{ filter.param_name }}-{{ forloop.index }}"
+                            {% if filter_value.active -%}checked{%- endif %}
+                            {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                          >{{ filter_value.label }}</label>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+        
+                    <div class="filter-group-display__submit">
+                      <input type="submit" class="btn" value="Apply">
+                    </div>
+                  {%- when 'price_range' -%}
+                    <div class="filter-group-display__price-range">
+                      <div class="filter-group-display__price-range-from">
+                        <span>{{ cart.currency.symbol }}</span>
+        
+                        <input name="{{ filter.min_value.param_name }}"
+                          id="Filter-{{ filter.min_value.param_name }}"
+                          {% if filter.min_value.value -%}
+                            value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                          {%- endif %}
+                          type="number"
+                          placeholder="0"
+                          min="0"
+                          max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                        >
+        
+                        <label for="Filter-{{ filter.min_value.param_name }}">From</label>
+                      </div>
+                      <div class="filter-group-display__price-range-to">
+                        <span>{{ cart.currency.symbol }}</span>
+        
+                        <input name="{{ filter.max_value.param_name }}"
+                          id="Filter-{{ filter.max_value.param_name }}"
+                          {% if filter.max_value.value -%}
+                            value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                          {%- endif %}
+                          type="number"
+                          placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                          min="0"
+                          max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                        >
+        
+                        <label for="Filter-{{ filter.max_value.param_name }}">To</label>
+                      </div>
+                    </div>
+        
+                    <div class="filter-group-display__submit">
+                      <input type="submit" class="btn" value="Apply">
+                    </div>
+                {%- endcase -%}
+              </div>
+            </details>
+          {%- endfor -%}
+        
+          <div class="active-filters">
+            <a href="{{ collection.url }}?sort_by={{ collection.sort_by }}" class="active-filters__clear">Clear all</a>
+        
+            {%- for filter in collection.filters -%}
+              {%- if filter.type == "price_range" -%}
+                {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                  <a class="active-filters__remove-filter" href="{{ filter.url_to_remove }}">
+                    {%- assign min_value = filter.min_value.value | default: 0 -%}
+                    {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                    {{ min_value | money }} - {{ max_value | money }} X
+                  </a>
+                {%- endif -%}
+              {%- else -%}
+                {%- for filter_value in filter.active_values -%}
+                  <a class="active-filters__remove-filter" href="{{ filter_value.url_to_remove }}">
+                    {{ filter.label }}: {{ filter_value.label }} X
+                  </a>
+                {%- endfor -%}
+              {%- endif- %}
+            {%- endfor -%}
+          </div>
+        </form>
+      </div>
+      
     </div>
 
-    <div class="row featured-row main__collection">
+    <div class="row main__collection">
       {%- if collection.products == blank -%}
         {%- for i in (1..4) -%}
         <div class="col l-3 m-3">
         <div class="feature-product category-product ">
+          <div class="feature__icon-heart">
             <i class="bi bi-suit-heart feature-icon "></i>
             <i class="bi bi-suit-heart-fill feature-icon--active "></i>
-            <div class="category-product__img feature-img feature-img--placeholder">
-              {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
-            </div>
-            <div class="product-name">
+          </div>
+          <div class="category-product__img feature-img feature-img--placeholder">
+            {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          <div class="product-name">
+            <a href="./product_detail.html" class="">
+              PRODUCT NAME
+            </a>
+          </div>
+          <div class="product-cost">
               <a href="./product_detail.html" class="">
-                PRODUCT NAME
+              $99.99
               </a>
-            </div>
-            <div class="product-cost">
-                <a href="./product_detail.html" class="">
-                $99.99
-                </a>
-            </div>
-            <form method="post" action="/cart/add">
-              <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-              <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
-              <button type="submit" name="add" class="btn btn-feature">
-                <span class="">
-                  ADD TO CART
-                </span>
-              </button>
-            </form>
+          </div>
+          <form method="post" action="/cart/add">
+            <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+            <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+            <button type="submit" name="add" class="btn btn-feature">
+              <span class="">
+                ADD TO CART
+              </span>
+            </button>
+          </form>
         </div>
       </div>
         {%- endfor -%}
@@ -62,30 +176,36 @@
         {%- for product in collection.products -%}
           <div class="col l-3 m-6 c-6">
             <div class="feature-product category-product mb100">
+              <div class="feature__icon-heart">
                 <i class="bi bi-suit-heart feature-icon "></i>
                 <i class="bi bi-suit-heart-fill feature-icon--active "></i>
-                <div class="category-product__img feature-img">
-                  <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}">
+              </div>
+              <div class="category-product__img feature-img">
+                {% if product.featured_image != blank %}
+                  <img class="feature-img__contain" width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300 }}">
+                {% else %}
+                  {{ 'collection-4' | placeholder_svg_tag: 'placeholder-svg' }}
+                {% endif %}
                 </div>
-                <div class="product-name">
-                  <a href="{{ product.url }}" class="">
-                    {{ product.title }}
-                  </a>
-                </div>
-                <div class="product-cost"> 
-                  <a href="{{ product.url }}" class="">
-                    {{ product.price | money }}
-                  </a>
-                </div>
-                <form method="post" action="/cart/add">
-                  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                  <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
-                  <button type="submit" name="add" class="btn btn-feature">
-                    <span class="">
-                      ADD TO CART
-                    </span>
-                  </button>
-                </form>
+              <div class="product-name">
+                <a href="{{ product.url }}" class="">
+                  {{ product.title }}
+                </a>
+              </div>
+              <div class="product-cost"> 
+                <a href="{{ product.url }}" class="">
+                  {{ product.price | money }}
+                </a>
+              </div>
+              <form method="post" action="/cart/add">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+                <button type="submit" name="add" class="btn btn-feature">
+                  <span class="">
+                    ADD TO CART
+                  </span>
+                </button>
+              </form>
             </div>
           </div>
         {%- endfor -%}

@@ -14,13 +14,15 @@
     display: flex;
     align-items: center;
   }
+  .page__account-log a{
+    margin-left: 30px;
+  }
   .page__account{
     display: flex !important;
     justify-content: space-between;
     align-items: center;
   }
   .page__account a{
-    margin-left: 30px;
     font-size: 1.6rem;
   }
   .page__account a svg{
@@ -29,6 +31,12 @@
   .page__account-info p{
     font-size: 1.6rem;
     line-height: 2.6rem;
+  }
+  .page__account-info a{
+    margin-top: 5px;
+    display: block;
+    font-style: italic;
+    text-decoration: underline;
   }
   .mt40{
     margin-top: 40px !important;
@@ -46,6 +54,7 @@
   </div>
   <div class="page__account-info">
     {{ customer.default_address | format_address }}
+    <a href="{{ routes.account_addresses_url }}">View address</a>
   </div>
 </div>
 

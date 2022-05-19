@@ -2,30 +2,45 @@
 {%- for block in section.blocks -%}
   {%- case block.type -%}
     {%- when 'announcement' -%}
-      <div class="background-primary container__large container-pc-low">
+      <div class="background-primary container__large container-pc-low announcement">
         <div class="header-above__contain wide-header-above grid">
           <span></span>
           <div class="heading-header text-color">
             {{ block.settings.text }}
           </div>
+          <div class="announcement__form df">
+            {% form 'localization' %}
+            <div class="localization__price">
+              <select name="country_code" class="price-select background-primary text-color" >
+                {%- for country in localization.available_countries -%}
+                  <option value="{{ country.iso_code }}" {%- if country.iso_code == localization.country.iso_code %} selected{% endif %}>
+                    {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                  </option>
+                {%- endfor -%}
+              </select>
+              <input hidden type="submit" value="Update" class="price__input">
+            </div>
+            {% endform %}
+  
+            {% form 'localization' %}
+            <div class="language df">
+              <select name="language_code" class="laguage-select text-color background-primary">
+                {% for language in localization.available_languages %}
+                  <option value="{{ language.iso_code }}"
+                    {%- if language == localization.language %} selected="selected"{% endif %}>
+                    {{ language.endonym_name }}             
+                  </option>
+                {% endfor %}
+              </select>         
+              <input hidden type="submit" value="Update" class="language__input background-primary text-color localization__input">
+            </div>
+            {% endform %}
+            
 
-         
+           
 
-
-          {% form 'localization' %}
-          <div class="language df">
-            <select name="language_code" class="laguage-select text-color background-primary">
-              {% for language in localization.available_languages %}
-                <option value="{{ language.iso_code }}"
-                  {%- if language == localization.language %} selected="selected"{% endif %}>
-                  {{ language.endonym_name }}             
-                </option>
-              {% endfor %}
-            </select>         
-
-            <input hidden type="submit" value="Update" class="background-primary text-color localization__input">
+  
           </div>
-          {% endform %}
 
         </div>
       </div>
@@ -34,13 +49,22 @@
 
 <script>
   let optionsLanguage = document.querySelector('.laguage-select');
-
-  let inputSubmit = document.querySelector('input[type="submit"]');
+  let inputLanguage = document.querySelector('.language__input');
   
   optionsLanguage.onchange = function() {
-
-    inputSubmit.click();
+    inputLanguage.click();
   }
+
+  let optionsLPrice = document.querySelector('.price-select');
+  let inputPrice = document.querySelector('.price__input');
+  
+  optionsLPrice.onchange = function() {
+    inputPrice.click();
+  }
+
+  let announcement = document.querySelector('.announcement__form ')
+  let announcementSpan = document.querySelector('.header-above__contain span')
+  announcementSpan.style.width = ` ${announcement.offsetWidth}px `
 </script>
 
     

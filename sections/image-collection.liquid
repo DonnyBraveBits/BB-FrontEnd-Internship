@@ -4,7 +4,7 @@
       {%- if collection.image != blank -%}
         <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ collection.image | image_url: width: 720, height: 720 }}"/>
       {%- elsif collection.image == blank -%}
-        {{ 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ section.settings.img | image_url: width: 1720, height: 1720 }}"/>
       {%- endif -%}
     </div>
 
@@ -55,6 +55,11 @@
           "value": "left"
         }
       ]
+    },
+    {
+      "type": "image_picker",
+      "label": "Background image",
+      "id": "img"
     }
   ],
   "blocks": [

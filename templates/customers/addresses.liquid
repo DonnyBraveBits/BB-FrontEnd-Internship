@@ -1,0 +1,39 @@
+<style>
+  .page__address{
+    text-align: center;
+    margin: 60px 0;
+  }
+  .page__address h1{
+    font-size: 4rem;
+    line-height: 4rem;
+    margin-bottom: 30px;
+  }
+  .page__address a{
+    font-size: 1.6rem;
+    text-decoration: underline;
+    margin-bottom: 60px;
+    display: block;
+  }
+  .page__address-info h2{
+    font-size: 3rem;
+    line-height: 3rem;
+    margin-bottom: 25px;
+  }
+  .page__address-info p {
+    font-size: 1.6rem;
+    line-height: 3rem;
+  }
+</style>
+
+<div class="page__address">
+  <h1>Address</h1>
+  <a href="{{ routes.account_url }}" class="colors-text-secondary ">
+    Return to Account detail
+  </a>
+  <div class="page__address-info">
+    <h2>Your address</h2>
+    {%- for address in customer.addresses -%}
+      {{ address | format_address }}
+    {%- endfor -%}
+  </div>
+</div>

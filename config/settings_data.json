@@ -17,7 +17,7 @@
     "social_tiktok_link": "",
     "social_snapchat_link": "",
     "social_youtube_link": "https:\/\/www.youtube.com\/shopify",
-    "favicon": "shopify:\/\/shop_images\/a_3.png",
+    "favicon": "shopify:\/\/shop_images\/green-eyed-kitten.jpg",
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
@@ -50,8 +50,7 @@
             "type": "logo",
             "settings": {
               "nameshop": "Name Shop",
-              "logo": "shopify:\/\/shop_images\/logo-white2.png",
-              "menu": "main-menu"
+              "logo": "shopify:\/\/shop_images\/logo-white.png"
             }
           },
           "e17e78fd-b9b9-4c4b-a344-fac5bc6a883f": {

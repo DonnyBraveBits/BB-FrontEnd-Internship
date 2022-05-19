@@ -5,6 +5,9 @@ function fqa(container){
     const listQuestion = $$(`#shopify-section-${container} .list-questions__item`);
     const questionMore = $$(`#shopify-section-${container} .list-questions__title span`);
     const solve = $$(`#shopify-section-${container} .solve`);
+
+    const liQuestion = $$(`#shopify-section-${container} .list-questions__title`);
+
     
     listQuestion[0].querySelector('span').innerHTML = "-"
     
@@ -22,7 +25,7 @@ function fqa(container){
     console.log(heightSolveEle)
     
     
-    listQuestion.forEach(function(ele, index)
+    liQuestion.forEach(function(ele, index)
     {   solve[index].style.height = '0';
         document.querySelector('.solve.active').style.height = `${heightSolveEle}px`;
     

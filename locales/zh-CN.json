@@ -10,7 +10,8 @@
     "interactive": {
       "forgot": "忘记密码了吗",
       "login": "登入",
-      "account": "创建帐号"
+      "account": "创建帐号",
+      "subscribe": "订阅"
     },
     "name": {
       "first_name": "名",

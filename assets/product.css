@@ -1,10 +1,12 @@
 
 .service-descript {
     max-width: 100%;
+    margin: 0;
+    margin-bottom: 30px;
 }
 
 .product-box {
-    padding: 55px 40px 55px;
+    padding: 50px 40px 50px;
     border: 1px solid #ECECEC;
 }
 
@@ -57,3 +59,15 @@
     align-items: center;
     background-color: var(--gray-bgc);
 }
+
+.collection__options-item button {
+  outline: none;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  line-height: 1.9rem;
+  letter-spacing: var(--letter-spacing);
+  font-weight: 600;
+  padding: 0;
+}
+

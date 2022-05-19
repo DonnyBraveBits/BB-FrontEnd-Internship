@@ -87,6 +87,7 @@
     {{ 'res-faq.css' | asset_url | stylesheet_tag }}
     {{ 'res-shop.css' | asset_url | stylesheet_tag }}
     {{ 'res-contact.css' | asset_url | stylesheet_tag }}
+    {{ 'res-product.css' | asset_url | stylesheet_tag }}
 
     {%- unless settings.type_page_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>

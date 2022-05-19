@@ -93,6 +93,10 @@ input[type="checkbox"] {
     margin-right: 20px;
 }
 
+.filter-group-display__list-item input{
+    margin-right: 10px;
+}
+
 .form-choose label {
     font-size: var(--font-size-regular);
     line-height: var(--line-height-regular);

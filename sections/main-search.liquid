@@ -24,13 +24,17 @@
   .nav-form::after{
     display: none;
   }
+  .page-search__search .search-form__btn{
+    background-color: rgb(226 226 226);
+    
+  }
 </style>
 
 <div class="page-search">
   <h2>Search results</h2>
   <div class="page-search__search">
     <form class="nav-form" action="{{ routes.search_url }}">
-      <input class="search-form__control" placeholder="Search product on Decarlo" type="search" name="q" value="{{ search.terms | escape }}">
+      <input class="search-form__control" placeholder="Search product..." type="search" name="q" value="{{ search.terms | escape }}">
 
       <button class="search-form__btn" type="submit" value="">search</button>
     </form>

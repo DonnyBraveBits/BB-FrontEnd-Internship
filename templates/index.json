@@ -8,14 +8,14 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/slide-img-1.jpg",
             "heading": "DECORAZIONI PER LE FESTE",
-            "button": "Show Now",
+            "button": "SHOP NOW",
             "link": "shopify:\/\/collections\/all"
           }
         },
         "1c6c48ca-b0fa-4309-9f61-cd94336f8f9a": {
           "type": "image_picker",
           "settings": {
-            "image": "shopify:\/\/shop_images\/slide-img-2.jpg",
+            "image": "shopify:\/\/shop_images\/collection-inmg.jpg",
             "heading": "DECORAZIONI PER LE FESTE",
             "button": "Show Now",
             "link": ""
@@ -33,7 +33,7 @@
         "22433623-26a2-4bd7-8356-84bd33171fd9": {
           "type": "image_picker",
           "settings": {
-            "image": "shopify:\/\/shop_images\/collection-inmg.jpg",
+            "image": "shopify:\/\/shop_images\/img5.jpg",
             "heading": "DECORAZIONI PER LE FESTE",
             "button": "Show Now",
             "link": ""
@@ -116,8 +116,8 @@
         "16520660290c76bbbe-2"
       ],
       "settings": {
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "imagevid": "shopify:\/\/shop_images\/img4.jpg",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=yeC7hI7S7es",
+        "imagevid": "shopify:\/\/shop_images\/discocer.jpg",
         "layout": "left"
       }
     },
@@ -125,7 +125,7 @@
       "type": "featured-product",
       "settings": {
         "heading": "FEATURED PRODUCT",
-        "collection": "bracelets"
+        "collection": "earings"
       }
     },
     "16520660328a021147": {
@@ -158,7 +158,7 @@
         "39b5ed20-3d56-46e3-93d1-67a9cff5c777"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/collection-inmg_2e730b63-e313-4ebb-8eca-febfa942ad0a.jpg",
+        "image": "shopify:\/\/shop_images\/collection-inmg.jpg",
         "options": "left"
       }
     },
@@ -170,7 +170,7 @@
           "settings": {
             "heading": "FREE SHIPPING IN ITALY",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE",
+            "link": "READ MORE",
             "more_link": "shopify:\/\/pages\/faq"
           }
         },
@@ -179,7 +179,7 @@
           "settings": {
             "heading": "FREE SHIPPING IN ITALY",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE",
+            "link": "READ MORE",
             "more_link": "shopify:\/\/pages\/faq"
           }
         },
@@ -188,7 +188,7 @@
           "settings": {
             "heading": "FREE SHIPPING IN ITALY",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE",
+            "link": "READ MORE",
             "more_link": "shopify:\/\/pages\/faq"
           }
         },
@@ -197,7 +197,7 @@
           "settings": {
             "heading": "FREE SHIPPING IN ITALY",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE",
+            "link": "READ MORE",
             "more_link": "shopify:\/\/pages\/faq"
           }
         }

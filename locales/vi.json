@@ -10,7 +10,8 @@
     "interactive": {
       "forgot": "Quên mật khẩu",
       "login": "Đăng nhập",
-      "account": "Tạo tài khoản"
+      "account": "Tạo tài khoản",
+      "subscribe": "Đăng ký"
     },
     "name": {
       "first_name": "Họ",

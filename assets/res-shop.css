@@ -1,6 +1,20 @@
 
 @media (max-width: 767px) {
 
+  .collection__options-item button {
+    margin-left: 0px;
+  }
+
+
+  .collection__sort span {
+    font-size: 1.4rem;
+    line-height: 1.8rem;
+  }
+
+  .category__info-name {
+    margin-top: 40px;
+  }
+
     .sub-nav {
         padding-top: 40px;
         flex-wrap: wrap;
@@ -24,7 +38,7 @@
     }
 
     .filter,
-    .product-sort {
+    .product-sort { 
         font-size: 14px;
         line-height: 17px;
     }
@@ -33,9 +47,9 @@
         flex: 1;
     }
 
-    .feature-img img {
-        width: 100%;
-        height: 285px;
+    .feature-img .feature-img__contain  {
+      width: 100%;
+      height: 165px;
     }
 
     .mb-40 {

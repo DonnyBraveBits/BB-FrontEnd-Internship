@@ -18,7 +18,7 @@
             <th class="cart-item__heading-total" > Total</th>
           </tr>
         </thead>
-  
+        
         <tbody>
           {% for item in cart.items %}
             <tr>
@@ -32,34 +32,40 @@
                     height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}">
   
                   <div class="cart-item__detail-info">
-                    {{ item.product.title | escape }}
+                    <a href="{{ item.url }}">
+                      {{ item.product.title | escape }}
+                    </a>
                   </div>
                 </div>
                 
                 <div class="cart-item__quantity">
-                  <div class="option-amount cart-item__count">
-                    <i class="bi bi-dash dash-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepDown()" ></i>
-                    <input class="product__quantity-input" min="1" type="number"  value="{{ item.quantity }}" id="Quantity-{{ item.index | plus: 1 }}"
-                    data-index="{{ item.index | plus: 1 }}"> 
-                    <i class="bi bi-plus plus-icon" onclick="this.parentNode.querySelector('.product__quantity-input').stepUp()" ></i>
-                  </div>
-
-                 
+                  <quantity-input class="quantity option-amount cart-item__count">
+                    <button class="quantity__button no-js-hidden" name="minus" type="button" onclick="this.parentNode.querySelector('.product__quantity-input').stepDown()">
+                      <i class="bi bi-dash"></i>
+                    </button>
+                    <input class="quantity__input product__quantity-input"
+                      type="number"
+                      name="updates[]"
+                      value="{{ item.quantity }}"
+                      min="0"
+                      id="Quantity-{{ item.index | plus: 1 }}"
+                      data-index="{{ item.index | plus: 1 }}"
+                    >
+                    <button  class="quantity__button no-js-hidden" name="plus" type="button" onclick="this.parentNode.querySelector('.product__quantity-input').stepUp()">
+                      <i class="bi bi-plus"></i>
+                    </button>
+                  </quantity-input>
 
                   <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
                     <a href="{{ item.url_to_remove }}" class="button--tertiary">
                       Remove
                     </a>
                   </cart-remove-button>
-
-                  <!-- <span>Remove</span> -->
                 </div>
     
                 <div class="cart-item__totals">
-                  {{ item.final_line_price | money }}
-                </div>
-                
-                
+                  {{ item.final_line_price | money }}                 
+                </div>               
               </td>
             </tr>
           {% endfor %}
@@ -67,20 +73,26 @@
       </table>
     </div>
   
+  
     <div class="cart__bottom">
-        <div class="cart__bottom-total">
-      
-          <p class="cart__bottom-subtotal">
-            Subtotal: 
-            <span> {{ cart.total_price | money_with_currency }} </span>
-          </p>
-          
-          <div class="cart__bottom-btn">
-            <button type="submit" id="checkout" class="cart__bottom-checkout" name="checkout" form="cart">
-              Checkout
-            </button>
-          </div>
+      <div class="cart__bottom-total">
+    
+        <p class="cart__bottom-subtotal">
+          Subtotal: 
+          <span> {{ cart.total_price | money_with_currency }} </span>
+        </p>
+        
+        <div class="cart__bottom-btn">
+
+          <button type="submit" name="update" class="btn btn--secondary update-cart">Update</button>
+
+          <button type="submit" id="checkout" class="btn cart__bottom-checkout" name="checkout">
+            Checkout
+          </button>
         </div>
+
+        
+      </div>
     
     </div>
   </div>

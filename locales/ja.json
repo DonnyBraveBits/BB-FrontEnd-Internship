@@ -10,7 +10,8 @@
     "interactive": {
       "forgot": "パスワードをお忘れですか",
       "login": "サインイン",
-      "account": "アカウントを作成する"
+      "account": "アカウントを作成する",
+      "subscribe": "申し込む"
     },
     "name": {
       "first_name": "ファーストネーム",

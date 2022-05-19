@@ -2,10 +2,10 @@
 
 <div class="feature {% if section.settings.width == 'full' %} background_secondary {% endif %}">
   <div class="featured-wrap grid wide1 ">
-    <div class="row no-gutters df {% if section.settings.width == 'large' %} featured-options--bgc {% endif %}">
+    <div class="row no-gutters df m-mobile {% if section.settings.width == 'large' %} featured-options--bgc {% endif %}">
     {% if section.settings.layout == 'left' %}
       <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
-        <div class="featured-options discover-content ">
+        <div class="featured-options discover-content p-0">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon"%}
@@ -51,7 +51,7 @@
 
     {% if section.settings.layout == 'right' %}
       <div class="col c-12 m-12 l-6 oder-tab-mb-2 mt-30">
-        <div class="featured-options discover-content pl-0">
+        <div class="featured-options discover-content pl-0 p-0">
           {% for block in section.blocks %}
             {% case block.type %}
               {% when "icon" %}

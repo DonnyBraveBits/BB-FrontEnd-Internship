@@ -67,9 +67,13 @@ heart();
 
 // close-open menu mobile 
 
+const heightLine = document.querySelector('.header-items').offsetHeight;
+const amountLine = document.querySelectorAll('.header-items').length
+let menuHeight = heightLine * amountLine + 60
+
 menuOpen.addEventListener('click',function() {
     document.querySelector('.header-list').style.transition = 'all 0.5s ease';
-    document.querySelector('.header-list').style.height = '367px';
+    document.querySelector('.header-list').style.height = `${menuHeight}px`;
     menuOpen.classList.add('disabled');
     menuClose.classList.add('active');
     document.querySelector('.overlay').style.display='block';
@@ -87,8 +91,15 @@ menuClose.addEventListener('click',function() {
 // open-menu-2
 
 const iconArrowDown = $('.header-items svg');
-const menuHeight = $('.product-option');
+const subMenuHeight = $('.product-option');
 const headerItem = $$('.header-items');
+
+const amountSubMenu = $$('.select-product__option-level').length
+const amountSubMenuHeight = $('.select-product__option-level').offsetHeight
+const totalSubMenuHeight = amountSubMenu * amountSubMenuHeight
+console.log(amountSubMenu)
+console.log(totalSubMenuHeight)
+
 
 
 console.log()
@@ -96,17 +107,21 @@ console.log()
 if(iconArrowDown){
     
     iconArrowDown.addEventListener('click',function() {
-        if(menuHeight.offsetHeight === 0) {
+        
+        if(subMenuHeight.offsetHeight === 0) {
+            document.querySelector('.header-list').style.height = `${menuHeight + totalSubMenuHeight }px`;
             iconArrowDown.classList.add('icon-rotate');
-            menuHeight.style.height = '80px';
-            menuHeight.style.marginTop = '10px';
+            console.log(totalSubMenuHeight)
+            subMenuHeight.style.height = `${ totalSubMenuHeight }px`;
+            subMenuHeight.style.marginTop = '10px';
             headerItem[2].style.paddingBottom = '0'
         }
         else {
+            document.querySelector('.header-list').style.height = `${menuHeight}px`;
             iconArrowDown.classList.remove('icon-rotate');
-            menuHeight.style.height = '0px';
-            menuHeight.style.marginTop = '0px';
-            headerItem[2].style.paddingBottom = '15px'
+            subMenuHeight.style.height = '0px';
+            subMenuHeight.style.marginTop = '0px';
+            headerItem[2].style.paddingBottom = '14px'
         }
         
     });

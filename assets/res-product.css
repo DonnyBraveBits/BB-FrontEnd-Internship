@@ -31,6 +31,10 @@
     .order-mb-1 {
         order: 1;
     }
+
+    .product-title{
+        margin-top: 0;
+    }
 }
 
 /* tablet */

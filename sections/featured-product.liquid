@@ -1,6 +1,6 @@
 <div class="category featured">
   <div class="category-wrap grid wide1 container__large ">
-    <h2 class="heading category-heading featured-heading">{{ section.settings.heading }}</h2> 
+    <h2 class="heading category-heading featured-heading color-text-primary">{{ section.settings.heading }}</h2> 
     <div class="row featured-row">
       {%- if section.settings.collection.products == blank -%}
        {%- for i in (1..4) -%}
@@ -36,32 +36,34 @@
 
       {%- elsif section.settings.collection.products != blank -%}         
         {%- for product in section.settings.collection.products -%}   
-          <div class="col l-3 m-3 c-12">
-            <div class="feature-product category-product mb100">
+          <div class="col l-3 m-3 ">
+            <div class="feature-product category-product mb100 mb-0">
+              <div class="feature__icon-heart">
                 <i class="bi bi-suit-heart feature-icon "></i>
                 <i class="bi bi-suit-heart-fill feature-icon--active "></i>
-                <div class="category-product__img feature-img">
-                  <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300, height: 300 }}">
-                </div>
-                <div class="product-name">
-                  <a href="{{ product.url }}" class="">
-                    {{ product.title }}
-                  </a>
-                </div>
-                <div class="product-cost"> 
-                  <a href="{{ product.url }}" class="">
-                    {{ product.price | money }}
-                  </a>
-                </div>
-                <form method="post" action="/cart/add">
-                  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-                  <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
-                  <button type="submit" name="add" class="btn btn-feature">
-                    <span class="">
-                      ADD TO CART
-                    </span>
-                  </button>
-                </form>
+              </div>
+              <div class="category-product__img feature-img">
+                <img width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ product.featured_image | image_url: width: 300, height: 300 }}">
+              </div>
+              <div class="product-name">
+                <a href="{{ product.url }}" class="">
+                  {{ product.title }}
+                </a>
+              </div>
+              <div class="product-cost"> 
+                <a href="{{ product.url }}" class="">
+                  {{ product.price | money }}
+                </a>
+              </div>
+              <form method="post" action="/cart/add">
+                <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
+                <input class="hidden" min="1" type="number" id="quantity" name="quantity" value="1"/>
+                <button type="submit" name="add" class="btn btn-feature">
+                  <span class="">
+                    ADD TO CART
+                  </span>
+                </button>
+              </form>
             </div>
           </div>
         {%- endfor -%}
@@ -73,6 +75,11 @@
 {% schema %}
 {
   "name" : "FEATURED PRODUCT",
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ],
   "settings": [
     { 
       "type": "text",

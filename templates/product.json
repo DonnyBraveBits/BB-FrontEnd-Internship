@@ -66,14 +66,14 @@
           "type": "Service",
           "settings": {
             "title": "OUR SERVICE",
-            "img": "shopify:\/\/shop_images\/cat-poses-perfectly.jpg"
+            "img": "shopify:\/\/shop_images\/img2.jpg"
           }
         },
         "1652084299dcf9e1b1-2": {
           "type": "Payment",
           "settings": {
             "title": "PAYMENT METHOD",
-            "img": "shopify:\/\/shop_images\/irish-setter-dog-close-up.jpg"
+            "img": "shopify:\/\/shop_images\/img1.jpg"
           }
         }
       },
@@ -88,9 +88,8 @@
     "1652084402f55e8b69": {
       "type": "featured-product",
       "settings": {
-        "options": "center",
         "heading": "FEATURED PRODUCT",
-        "collection": "bracelets"
+        "collection": "ring"
       }
     },
     "1652084438db6fd785": {
@@ -101,8 +100,8 @@
           "settings": {
             "heading": "FREE SHIPPING IN ITALY",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE",
-            "more_link": ""
+            "link": "READ MORE",
+            "more_link": "shopify:\/\/pages\/faq"
           }
         },
         "1652084438c951cb9d-1": {
@@ -110,8 +109,8 @@
           "settings": {
             "heading": "FREE SHIPPING IN ITALY",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE",
-            "more_link": ""
+            "link": "READ MORE",
+            "more_link": "shopify:\/\/pages\/faq"
           }
         },
         "1652084438c951cb9d-2": {
@@ -119,8 +118,8 @@
           "settings": {
             "heading": "FREE SHIPPING IN ITALY",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE",
-            "more_link": ""
+            "link": "READ MORE",
+            "more_link": "shopify:\/\/pages\/faq"
           }
         },
         "1652084438c951cb9d-3": {
@@ -128,8 +127,8 @@
           "settings": {
             "heading": "FREE SHIPPING IN ITALY",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-            "link": "SEE MORE",
-            "more_link": ""
+            "link": "READ MORE",
+            "more_link": "shopify:\/\/pages\/faq"
           }
         }
       },

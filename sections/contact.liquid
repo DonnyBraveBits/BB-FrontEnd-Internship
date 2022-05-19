@@ -29,12 +29,12 @@
                         render 'icon-chat'
                       endif
                     -%}
-                    <h3 class="product-title contact-title ">
+                    <h3 class="product-title contact-title " >
                       {{ block.settings.description }}
                     </h3>
-                    <p class="service-descript colors-text-secondary">
+                    <a href="tel: {{ block.settings.detail }}" class="service-descript colors-text-secondary">
                       {{ block.settings.detail }}
-                    </p>
+                    </a>
                   </div>
                 </div>
             {% endcase %}

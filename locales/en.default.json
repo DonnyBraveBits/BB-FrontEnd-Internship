@@ -10,7 +10,8 @@
     "interactive": {
       "forgot": "Forgot your password",
       "login": "Sign in",
-      "account": "Create account"
+      "account": "Create account",
+      "subscribe": "Subscribe"
     },
     "name": {
       "first_name": "First Name",

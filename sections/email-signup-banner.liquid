@@ -1,0 +1,161 @@
+
+<style>
+  
+  .password-main {
+    position: relative;
+  }
+
+  .password-main__background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .password-main {
+
+  }
+
+  .password-main__form {
+    width: 700px;
+    background-color: #fff;
+    padding: 75px 90px;
+  }
+
+  .container-height {
+    height: 600px
+  }
+
+  .subscribe__success {
+      text-align: center
+  }
+
+  .password-main__form-paragrap {
+    text-align: center;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    padding-bottom: 30px;
+    color: rgb(96, 95, 95);
+  }
+
+  .password-main__form-heading {
+    font-size: 4rem;
+    line-height: 4.5rem;
+    text-align: center;
+  }
+
+  .field__input, .customer .field input {
+    flex-grow: 1;
+    text-align: left;
+    padding: 1.5rem;
+    margin: var(--inputs-border-width);
+    transition: box-shadow var(--duration-short) ease;
+    width: 370px;
+    font-size: 2.2rem;
+}
+
+.newsletter-form__button:not(:focus-visible):not(.focused) {
+    box-shadow: inherit;
+    background-color: inherit;
+}
+
+.newsletter-form__button {
+    width: 4.4rem;
+    margin: 0;
+    right: var(--inputs-border-width);
+    top: 0;
+    height: 100%;
+    z-index: 2;
+}
+
+  .field__button {
+    position: absolute;
+    border: navajowhite;
+    left: 65%;
+      
+  }
+
+  .field {
+    text-align: center;
+    position: relative;
+  }
+  @media (max-width: 767px) {
+    .field__input{
+      width: 270px;
+    }
+    .password-main__form{
+      padding: 70px 0;
+    }
+  }
+</style>
+
+  <div class="password-main">
+    <img class="password-main__background" src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" alt="">
+    <div class="container df container-height">
+      <div class="password-main__form">
+
+      <h1 class="password-main__form-heading">Opening soon</h1>
+      <p class="password-main__form-paragrap">Be the first to know when we launch.</p>
+      
+      {% form 'customer', class: 'newsletter-form' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div class="newsletter-form__field-wrapper">
+        <div class="field">
+          <input
+            id="NewsletterForm--{{ section.id }}"
+            type="email"
+            name="contact[email]"
+            class="field__input"
+            value="{{ form.email }}"
+            aria-required="true"
+            autocorrect="off"
+            autocapitalize="off"
+            autocomplete="email"
+            {% if form.errors %}
+              autofocus
+              aria-invalid="true"
+              aria-describedby="Newsletter-error--{{ section.id }}"
+            {% elsif form.posted_successfully? %}
+              aria-describedby="Newsletter-success--{{ section.id }}"
+            {% endif %}
+            placeholder="Email"
+            required
+          >
+          
+          <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+            {% render 'icon-arrow' %}
+          </button>
+        </div>
+        {%- if form.errors -%}
+          <h3 class="subscribe__success">Send failed!</h3>
+         
+        {%- endif -%}
+      </div>
+      {%- if form.posted_successfully? -%}
+        <h3 class="subscribe__success">Thanks for subscribing !!!</h3>
+      {%- endif -%}
+    {% endform %}
+
+    <!-- {% form 'customer' %}
+      <input type="hidden" name="contact[tags]" value="newsletter">
+      <div class="form-email">
+        <input required type="email" name="contact[email]" value="{{ form.email }}" aria-describedby="ContactFooter-success" class="colors-text-secondary" id="inputEmail" placeholder="{{ 'user.placeholder.email' | t }}">
+        <button type="submit" class="text-color">{{ 'user.interactive.subscribe' | t }}</button>
+      </div>
+      {%- if form.posted_successfully? -%}
+        <h3 class="subscribe__success">Thanks for subscribing !!!</h3>
+      {%- endif -%}
+    {% endform %} -->
+
+      </div>
+      
+    </div>
+  </div>
+
+  
+

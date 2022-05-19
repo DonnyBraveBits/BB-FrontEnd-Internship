@@ -11,6 +11,10 @@
     .mb-40 {
         margin-bottom: 40px;
     }
+
+    .form-container {
+      padding-bottom: 40px;
+    }
     
 }
 

@@ -1,7 +1,7 @@
 
 <div class="category">
   <div class="category-wrap grid wide1 container__large">
-    <h2 class="heading category-heading">{{ section.settings.heading }}</h2>
+    <h2 class="heading category-heading color-text-primary">{{ section.settings.heading }}</h2>
     <div class="row">
       {% for block in section.blocks %}
         {%- if block.settings.collection != blank -%}
@@ -12,7 +12,9 @@
                       
                   </a>
                   <div class="category-product__img">
-                    <img 	width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.collection.featured_image | image_url: width: 720, height: 720 }}" alt="">
+                    <a href="{{ block.settings.collection.url }}">
+                      <img 	width="{{ image.width }}" height="{{ image.height }}" loading="lazy" src="{{ block.settings.collection.featured_image | image_url: width: 720, height: 720 }}" alt="">
+                    </a>
                   </div>
               </div>
           </div>

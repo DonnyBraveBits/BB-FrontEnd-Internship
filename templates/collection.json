@@ -6,12 +6,14 @@
         "1652429266c6e6cead-0": {
           "type": "heading",
           "settings": {
-            "optionSize": "large"
+            "optionSize": "large",
+            "optionColor": "light"
           }
         },
         "1652429266c6e6cead-1": {
           "type": "Description",
           "settings": {
+            "optionColor": "dark"
           }
         }
       },
@@ -20,7 +22,8 @@
         "1652429266c6e6cead-1"
       ],
       "settings": {
-        "options": "left"
+        "options": "left",
+        "img": "shopify:\/\/shop_images\/slide-img-2.jpg"
       }
     },
     "main": {
