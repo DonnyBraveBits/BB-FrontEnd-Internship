@@ -2,7 +2,9 @@
 /* mobile */
 
 @media (max-width: 767px) {
-
+  .nav-form{
+    width: 100%;
+  }
   .category-product__img svg{
     height: 165px;
   }
@@ -584,7 +586,7 @@
   .search-form {
     left: 0;
     width: 100%;
-    top: 100px;
+    top: 100%;
   }
 }
 

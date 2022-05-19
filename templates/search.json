@@ -4,9 +4,17 @@
       "type": "main-search",
       "settings": {
       }
+    },
+    "1652956303fc487e1f": {
+      "type": "featured-product",
+      "settings": {
+        "heading": "",
+        "collection": "earings"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1652956303fc487e1f"
   ]
 }
