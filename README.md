@@ -1,4 +1,4 @@
 # BB-FrontEnd-Internship
 
-https://thanhdatshop.myshopify.com/
+thanhdatshop.myshopify.com/password
 password: 123
