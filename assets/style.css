@@ -426,6 +426,7 @@
 
 .feature-img {
     overflow: hidden;
+    border: #ab9f9f 3px solid;
 }
 
 .feature-img--placeholder{
@@ -1722,4 +1723,19 @@ tr {
 
 .detail-info__size-icon{
     display: none;
+}
+
+.price-select::-webkit-scrollbar {
+  display: none;
+}
+
+.price-select:hover::-webkit-scrollbar {
+  display: block;
+  width: 6px;  /* Chiều rộng vùng chứa scrollbar */
+
+}
+
+.price-select::-webkit-scrollbar-thumb {
+  background-color: #cccccc82; /* Màu của thanh cuộn (scroll thumb) */
+  border-radius: 8px;
 }
