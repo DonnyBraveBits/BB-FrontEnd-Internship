@@ -76,8 +76,7 @@
   .field__button {
     position: absolute;
     border: navajowhite;
-    left: 65%;
-      
+    left: 75%;     
   }
 
   .field {
@@ -91,11 +90,19 @@
     .password-main__form{
       padding: 70px 0;
     }
+    .field__button{
+      left: 62%;
+    }
+  }
+  @media (max-width: 520px) {
+    .field__button{
+      left: 66%;
+    }
   }
 </style>
 
   <div class="password-main">
-    <img class="password-main__background" src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" alt="">
+    <img loading="lazy" class="password-main__background" src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" alt="">
     <div class="container df container-height">
       <div class="password-main__form">
 
@@ -127,7 +134,7 @@
             required
           >
           
-          <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe" aria-label="{{ 'newsletter.button_label' | t }}">
+          <button type="submit" class="newsletter-form__button field__button" name="commit" id="Subscribe">
             {% render 'icon-arrow' %}
           </button>
         </div>
